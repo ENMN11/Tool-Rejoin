@@ -35,7 +35,4 @@ json_data = {
 
 response = requests.post('https://script.banana-hub.xyz/api/tool/resethwid', cookies=cookies, headers=headers, json=json_data)
 
-# Note: json_data will not be serialized by requests
-# exactly as it was in the original request.
-#data = '{"key":"28934f295293c2ccb43fecf46cf0dffb"}'
-#response = requests.post('https://script.banana-hub.xyz/api/tool/resethwid', cookies=cookies, headers=headers, data=data)
+print("11")
