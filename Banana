@@ -1,0 +1,41 @@
+import requests
+
+cookies = {
+    'accessToken': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlODA2NDIyY2FmZDQwYjIxZDI0MTYiLCJ1c2VybmFtZSI6ImlfYW1faHV5MTIiLCJhdmF0YXIiOiJhXzZlOWIyOTU4NzljMDQyZTkyZTgxZDdmMGYzZWZmYTVjIiwiZGlzY29yZF9pZCI6IjkwNTY1NzYxMjkyODk1ODQ4NCIsImNsYWltIjp0cnVlLCJpYXQiOjE3NTAyMTg3NDUsImV4cCI6MTc1MDMwNTE0NX0.qGGJfr8DuEVF2FwAqJ0e5abAARuJeAuNGnOKcEQR53uYtwK4wP8lFoTTAlKzK5NwOrSF5YJ4GlzliEk2BlwcdH0dxq7FnOuNrxrrnSOtNR_4ocDWud3sehVPf5wlrsHA7ZdL5xDPZ0N4_ducZiMNuDXOaaXvd0goecikWnPcDGVvrSor84AtsEJfM48gNUaKtjmsTHP01s4YdQvhKFhq6053FFlqIbmBwV4OIr8TUFLH6sPb-w7qb3vKR70wQAM10LYOBeeL-m-XzlI3EAw4qPruzo7OA8wpIEPzboKELiwRZS5467MuKmQ9TyMTjsfcKzf4lBVM8JMsLUiMbeKL8A',
+    'refreshToken': 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlODA2NDIyY2FmZDQwYjIxZDI0MTYiLCJkaXNjb3JkX2lkIjoiOTA1NjU3NjEyOTI4OTU4NDg0IiwiaWF0IjoxNzUwMjE4NzQ1LCJleHAiOjE3NTA4MjM1NDV9.PP5j_sDT5bZgwx5PQPamyu2holNJxC28D6KcqqIZq3v8QBL2uKcRIJ9LNkNZrV3MWlxJe-Krbdu6CHic28uwVV0pDqd4F4NpVFCX0wum41l_XLNGFCXgX0RRRdrHyy57ANmlFrsbERnqNg5771sFseJMh-MDJRrzVCLVZUJxmIA9OLNqXMI8QFH7du-De7he9srIoREa6mw9J89Zai9TfJXzamQgJ_01K8pCiGyFe51N9oYm8VEvt8T53Dl4pt9XoB1nDIAoIE1D5EEo06ycIURjzjKvZEro_qJA3H2jUspSzI_q5UZTcD26_ExUjDSIvJtslM3Llxj9XP2hiOXD8g',
+    'cf_clearance': 'zRhRVCU2CUYSjXr8oRAPhYl6ErHk8U3o6PhzBLNgvCE-1750224022-1.2.1.1-rHorDhXQaC.OYcLkPA.mJPwGrfQcBPS8JIkTrEgnQSQUGAvVAkwssFN6UhbOwySPxF1VyFklKXOTphM8qSxaxhBjIi79ZeTg4u1twGQJ5yuwWFFOJjKKMUYJiGnMbGbOIZowe655m3ELSlvdE1sh7GJd0jiQ9hIzOTXU80swNDdSlhnh2Kh_Hb1Uit.DF1_xPYgkuVj9ikn31WBWJ7rTP3uJAkRB.eO2mXuMR3FAbCLEa0rFv36z2ne0NnK6ovr0iD4OxDd3bJTyyaNMNwBdbkx_82CUvKQlMsV2Bb.C7irLpXjyNBpzZ9isIg0biP2I59ANw5B_CHsMF5zZr7tKm2Wi9MkImJkvodYXjdt0u_X76Cpp1xSK3TYzP0M25HBQ',
+}
+
+headers = {
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'en-US,en;q=0.8',
+    'content-type': 'application/json',
+    'origin': 'https://script.banana-hub.xyz',
+    'priority': 'u=1, i',
+    'referer': 'https://script.banana-hub.xyz/dashboard',
+    'sec-ch-ua': '"Chromium";v="136", "Brave";v="136", "Not.A/Brand";v="99"',
+    'sec-ch-ua-arch': '"x86"',
+    'sec-ch-ua-bitness': '"64"',
+    'sec-ch-ua-full-version-list': '"Chromium";v="136.0.0.0", "Brave";v="136.0.0.0", "Not.A/Brand";v="99.0.0.0"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-model': '""',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-ch-ua-platform-version': '"10.0.0"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'sec-gpc': '1',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
+    # 'cookie': 'accessToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlODA2NDIyY2FmZDQwYjIxZDI0MTYiLCJ1c2VybmFtZSI6ImlfYW1faHV5MTIiLCJhdmF0YXIiOiJhXzZlOWIyOTU4NzljMDQyZTkyZTgxZDdmMGYzZWZmYTVjIiwiZGlzY29yZF9pZCI6IjkwNTY1NzYxMjkyODk1ODQ4NCIsImNsYWltIjp0cnVlLCJpYXQiOjE3NTAyMTg3NDUsImV4cCI6MTc1MDMwNTE0NX0.qGGJfr8DuEVF2FwAqJ0e5abAARuJeAuNGnOKcEQR53uYtwK4wP8lFoTTAlKzK5NwOrSF5YJ4GlzliEk2BlwcdH0dxq7FnOuNrxrrnSOtNR_4ocDWud3sehVPf5wlrsHA7ZdL5xDPZ0N4_ducZiMNuDXOaaXvd0goecikWnPcDGVvrSor84AtsEJfM48gNUaKtjmsTHP01s4YdQvhKFhq6053FFlqIbmBwV4OIr8TUFLH6sPb-w7qb3vKR70wQAM10LYOBeeL-m-XzlI3EAw4qPruzo7OA8wpIEPzboKELiwRZS5467MuKmQ9TyMTjsfcKzf4lBVM8JMsLUiMbeKL8A; refreshToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRlODA2NDIyY2FmZDQwYjIxZDI0MTYiLCJkaXNjb3JkX2lkIjoiOTA1NjU3NjEyOTI4OTU4NDg0IiwiaWF0IjoxNzUwMjE4NzQ1LCJleHAiOjE3NTA4MjM1NDV9.PP5j_sDT5bZgwx5PQPamyu2holNJxC28D6KcqqIZq3v8QBL2uKcRIJ9LNkNZrV3MWlxJe-Krbdu6CHic28uwVV0pDqd4F4NpVFCX0wum41l_XLNGFCXgX0RRRdrHyy57ANmlFrsbERnqNg5771sFseJMh-MDJRrzVCLVZUJxmIA9OLNqXMI8QFH7du-De7he9srIoREa6mw9J89Zai9TfJXzamQgJ_01K8pCiGyFe51N9oYm8VEvt8T53Dl4pt9XoB1nDIAoIE1D5EEo06ycIURjzjKvZEro_qJA3H2jUspSzI_q5UZTcD26_ExUjDSIvJtslM3Llxj9XP2hiOXD8g; cf_clearance=zRhRVCU2CUYSjXr8oRAPhYl6ErHk8U3o6PhzBLNgvCE-1750224022-1.2.1.1-rHorDhXQaC.OYcLkPA.mJPwGrfQcBPS8JIkTrEgnQSQUGAvVAkwssFN6UhbOwySPxF1VyFklKXOTphM8qSxaxhBjIi79ZeTg4u1twGQJ5yuwWFFOJjKKMUYJiGnMbGbOIZowe655m3ELSlvdE1sh7GJd0jiQ9hIzOTXU80swNDdSlhnh2Kh_Hb1Uit.DF1_xPYgkuVj9ikn31WBWJ7rTP3uJAkRB.eO2mXuMR3FAbCLEa0rFv36z2ne0NnK6ovr0iD4OxDd3bJTyyaNMNwBdbkx_82CUvKQlMsV2Bb.C7irLpXjyNBpzZ9isIg0biP2I59ANw5B_CHsMF5zZr7tKm2Wi9MkImJkvodYXjdt0u_X76Cpp1xSK3TYzP0M25HBQ',
+}
+
+json_data = {
+    'key': 'c209fd9b6d62e31029a71ae8b0556f79',
+}
+
+response = requests.post('https://script.banana-hub.xyz/api/tool/resethwid', cookies=cookies, headers=headers, json=json_data)
+
+# Note: json_data will not be serialized by requests
+# exactly as it was in the original request.
+#data = '{"key":"c209fd9b6d62e31029a71ae8b0556f79"}'
+#response = requests.post('https://script.banana-hub.xyz/api/tool/resethwid', cookies=cookies, headers=headers, data=data)
