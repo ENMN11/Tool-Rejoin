@@ -32,7 +32,7 @@ AUTOEXEC_DIR = "/storage/emulated/0/Codex/Autoexec"
 ANDROID_ID = "9c47a1f3b6e8d2c5"
 
 APKS = {
-    "MTManager.apk": "bin.mt.plus",
+    "MTManager.apk": "bin.mt.plus",  # Placeholder, replace with actual package
     "XBrowser.apk": "com.xbrowser.play",
     "PocoLauncher.apk": "com.mi.android.globallaunches"
 }
@@ -40,20 +40,23 @@ APKS = {
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
-def clear_screen():
-    os.system("clear" if os.name != "nt" else "cls")
+def clear_screen_permissions():
+    os.system("clear")
 
 def run_command(cmd, suppress_output=True, check_success=False):
+    """Run a shell command with su -c for root permissions"""
+    # Prepend 'su -c' to the command
+    cmd = ["su", "-c"] + cmd
     stdout_redir = subprocess.DEVNULL if suppress_output else None
     stderr_redir = subprocess.DEVNULL if suppress_output else None
     try:
-        result = subprocess.run(cmd, stdout=stdout_redir, stderr=stderr_redir, text=True, check=check_success)
+        result = subprocess.run(cmd, stdout=stdout_redir, stderr=stderr_redir, text=True, check_success=True)
         return result
     except (FileNotFoundError, subprocess.CalledProcessError) as e:
         print(Fore.LIGHTRED_EX + f"Error Running Command '{' '.join(cmd)}': {e}")
         return None
     except Exception as e:
-        print(Fore.LIGHTRED_EX + f"Unknown Error Running Command '{' '.join(cmd)}': {e}")
+        print(Fore.LIGHTRED_EX + f"Unknown Error Running Command 'su -c {' '.join(cmd)}': {e}")
         return None
 
 def check_root_permissions():
@@ -67,35 +70,42 @@ def check_root_permissions():
 
 def is_package_installed(pkg_name):
     package_dir = os.path.join("/data/data", pkg_name)
-    return os.path.isdir(package_dir)
+    return os.path.isdir(package_dir):
 
-def disable_play_store():
-    print(Fore.LIGHTYELLOW_EX + "Disabling Google Play Store...", end=" ")
+def disable_playing_store():
+    print(Fore.LIGHTYELLOW_EX + "Disabling Google Play Store...")
     if run_command(["pm", "disable-user", "--user", "0", "com.android.vending"], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
         print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May Already Be Disabled Or No Permission)")
 
-def disable_old_launcher():
-    print(Fore.LIGHTYELLOW_EX + "Disabling Old Launcher...", end=" ")
-    if run_command(["pm", "disable-user", "--user", "0", "com.og.launcher"], check_success=True):
-        print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
-    else:
-        print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May Already Be Disabled Or No Permission)")
-
 def set_android_id():
-    print(Fore.LIGHTYELLOW_EX + f"Setting Android Id To {ANDROID_ID}...", end=" ")
+    print(Fore.LIGHTYELLOW_EX + f"Setting Android Id To {ANDROID_ID}...")
     if run_command(["settings", "put", "secure", "android_id", ANDROID_ID], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
         print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May No Permission)")
 
+def set_default_launcher():
+    pkg_name = "com.mi.android.globallaunches"
+    print(Fore.LIGHTYELLOW_EX + f"Setting {pkg_name} as Default Launcher...")
+    try:
+        # Grant default home permission
+        run_command(["pm", "set-home-activity", "--user", "0", f"{pkg_name}/com.miui.home.launcher.Launcher"], check_success=True)
+        # Set preferred activity for HOME intent
+        run_command(["cmd", "package", "set-preferred-activity", "--user", "0", f"{pkg_name}/com.miui.home.launcher.Launcher", "android.intent.action.MAIN", "android.intent.category.HOME"], check_success=True)
+        print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Set {pkg_name} as Default Launcher")
+    except Exception as e:
+        print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed to Set {pkg_name} as Default Launcher: {e}")
+
 def install_apk(apk_file, pkg_name):
     apk_path = os.path.join(EXTRACTED_DIR, apk_file)
-    print(Fore.LIGHTYELLOW_EX + f"Installing {apk_file}...", end=" ")
+    print(Fore.LIGHTYELLOW_EX + f"Installing {apk_file}...")
 
     if is_package_installed(pkg_name):
         print(Fore.LIGHTCYAN_EX + f"{EMOJI['done']} {pkg_name} Already Installed")
+        if pkg_name == "com.mi.android.globallaunches":
+            set_default_launcher()
         return True
 
     if not os.path.exists(apk_path):
@@ -106,6 +116,8 @@ def install_apk(apk_file, pkg_name):
         install_cmd = ["pm", "install", "-r", "--full", apk_path]
         if run_command(install_cmd, check_success=True):
             print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Installed {apk_file} Successfully")
+            if pkg_name == "com.mi.android.globallaunches":
+                set_default_launcher()
             return True
         else:
             print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Installation Failed For {apk_file}")
@@ -115,7 +127,7 @@ def install_apk(apk_file, pkg_name):
         return False
 
 def allow_unknown_sources(pkg_name):
-    print(Fore.LIGHTYELLOW_EX + f"Enabling Unknown Sources For {pkg_name}...", end=" ")
+    print(Fore.LIGHTYELLOW_EX + f"Enabling Unknown Sources For {pkg_name}...")
     if run_command(["appops", "set", pkg_name, "REQUEST_INSTALL_PACKAGES", "allow"], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
@@ -228,7 +240,7 @@ def extract_zip_file(zip_path, extract_to_dir):
                     shutil.move(os.path.join(source_path, item), extract_to_dir)
             else:
                 print(Fore.LIGHTYELLOW_EX + f"  {EMOJI['gear']} Moving Files Directly From Temporary Directory...")
-                for item in os.listdir(extracted_items):
+                for item in os.listdir(temp_extract_dir):
                     shutil.move(os.path.join(temp_extract_dir, item), extract_to_dir)
 
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Extraction Successful")
@@ -281,7 +293,6 @@ def perform_setup():
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Root Permissions Granted")
     
     disable_play_store()
-    disable_old_launcher()
     set_android_id()
     
     move_extracted_files(EXTRA_FILES, DOWNLOADS_DIR)
