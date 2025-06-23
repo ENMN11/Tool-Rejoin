@@ -41,10 +41,9 @@ EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 def clear_screen():
-    os.system("clear")
+    os.system("clear" if os.name != "nt" else "cls")
 
 def run_command(cmd, suppress_output=True, check_success=False):
-    cmd = ["su", "-c"] + cmd
     stdout_redir = subprocess.DEVNULL if suppress_output else None
     stderr_redir = subprocess.DEVNULL if suppress_output else None
     try:
@@ -71,37 +70,60 @@ def is_package_installed(pkg_name):
     return os.path.isdir(package_dir)
 
 def disable_play_store():
-    print(Fore.LIGHTYELLOW_EX + "Disabling Google Play Store...")
+    print(Fore.LIGHTYELLOW_EX + "Disabling Google Play Store...", end=" ")
     if run_command(["pm", "disable-user", "--user", "0", "com.android.vending"], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
         print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May Already Be Disabled Or No Permission)")
 
+def disable_old_launcher():
+    print(Fore.LIGHTYELLOW_EX + "Disabling Old Launcher...", end=" ")
+    if run_command(["pm", "disable-user", "--user", "0", "com.og.launcher"], check_success=True):
+        print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
+    else:
+        print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May Already Be Disabled Or No Permission)")
+
 def set_android_id():
-    print(Fore.LIGHTYELLOW_EX + f"Setting Android Id To {ANDROID_ID}...")
+    print(Fore.LIGHTYELLOW_EX + f"Setting Android Id To {ANDROID_ID}...", end=" ")
     if run_command(["settings", "put", "secure", "android_id", ANDROID_ID], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
         print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May No Permission)")
 
-def set_default_launcher():
-    pkg_name = "com.mi.android.globallaunches"
-    print(Fore.LIGHTYELLOW_EX + f"Setting {pkg_name} as Default Launcher...")
+def set_default_launcher(pkg_name):
+    print(Fore.LIGHTYELLOW_EX + f"Setting {pkg_name} as Default Launcher...", end=" ")
     try:
-        run_command(["pm", "set-home-activity", "--user", "0", f"{pkg_name}/com.miui.home.launcher.Launcher"], check_success=True)
-        run_command(["cmd", "package", "set-preferred-activity", "--user", "0", f"{pkg_name}/com.miui.home.launcher.Launcher", "android.intent.action.MAIN", "android.intent.category.HOME"], check_success=True)
-        print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Set {pkg_name} as Default Launcher")
+        # Clear any existing default launcher
+        run_command(["pm", "clear-preferred-activities", "--user", "0"], check_success=True)
+        
+        # Set the package as the default launcher for the HOME intent
+        launcher_cmd = [
+            "am", "set-preferred-activity",
+            "--user", "0",
+            "-a", "android.intent.action.MAIN",
+            "-c", "android.intent.category.HOME",
+            "-c", "android.intent.category.DEFAULT",
+            "-n", f"{pkg_name}/.MainActivity"
+        ]
+        if run_command(launcher_cmd, check_success=True):
+            print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
+            return True
+        else:
+            print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed to Set Default Launcher")
+            return False
     except Exception as e:
-        print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed to Set {pkg_name} as Default Launcher: {e}")
+        print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Error Setting Default Launcher: {e}")
+        return False
 
 def install_apk(apk_file, pkg_name):
     apk_path = os.path.join(EXTRACTED_DIR, apk_file)
-    print(Fore.LIGHTYELLOW_EX + f"Installing {apk_file}...")
+    print(Fore.LIGHTYELLOW_EX + f"Installing {apk_file}...", end=" ")
 
     if is_package_installed(pkg_name):
         print(Fore.LIGHTCYAN_EX + f"{EMOJI['done']} {pkg_name} Already Installed")
+        # If it's the launcher, ensure it's set as default
         if pkg_name == "com.mi.android.globallaunches":
-            set_default_launcher()
+            set_default_launcher(pkg_name)
         return True
 
     if not os.path.exists(apk_path):
@@ -112,8 +134,9 @@ def install_apk(apk_file, pkg_name):
         install_cmd = ["pm", "install", "-r", "--full", apk_path]
         if run_command(install_cmd, check_success=True):
             print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Installed {apk_file} Successfully")
+            # If it's the launcher, set it as default
             if pkg_name == "com.mi.android.globallaunches":
-                set_default_launcher()
+                set_default_launcher(pkg_name)
             return True
         else:
             print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Installation Failed For {apk_file}")
@@ -123,8 +146,9 @@ def install_apk(apk_file, pkg_name):
         return False
 
 def allow_unknown_sources(pkg_name):
-    print(Fore.LIGHTYELLOW_EX + f"Enabling Unknown Sources For {pkg_name}...")
-    if run_command(["appops", "set", pkg_name, "REQUEST_INSTALL_PACKAGES", "allow"], check_success=True):
+    print(Fore.LIGHTYELLOW_EX + f"Enabling Unknown Sources For {pkg_name}...", end=" ")
+    # Use settings to enable REQUEST_INSTALL_PACKAGES without appops
+    if run_command(["settings", "put", "secure", "install_non_market_apps", "1"], check_success=True):
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Completed")
     else:
         print(Fore.LIGHTRED_EX + f"{EMOJI['error']} Failed (May No Permission)")
@@ -289,6 +313,7 @@ def perform_setup():
         print(Fore.LIGHTGREEN_EX + f"{EMOJI['done']} Root Permissions Granted")
     
     disable_play_store()
+    disable_old_launcher()
     set_android_id()
     
     move_extracted_files(EXTRA_FILES, DOWNLOADS_DIR)
