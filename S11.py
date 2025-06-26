@@ -16,7 +16,7 @@ HOME_DIR = "/data/data/com.termux/files/home"
 ZIP_PATH = os.path.join(HOME_DIR, "Nexus.zip")
 EXTRACTED_DIR = os.path.join(HOME_DIR, "Nexus")
 DOWNLOADS_DIR = "/storage/emulated/0/Download"
-AUTOEXEC_DIR = "/storage/emulated/0/RonixExploit/autoexec"
+AUTOEXEC_DIR = "/storage/emulated/0/Arceus X/Autoexec"
 ANDROID_ID = "9c47a1f3b6e8d2c5"
 
 APKS = {
