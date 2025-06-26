@@ -386,7 +386,9 @@ def main_menu():
         """)
         print(Fore.LIGHTBLUE_EX + "[1] Setup (Initial Installation)")
         print(Fore.LIGHTMAGENTA_EX + "[2] Update (Download And Reinstall)")
-        print(Fore.LIGHTRED_EX + "[3] Exit")
+        print(Fore.LIGHTRED_EX
+
+ + "[3] Exit")
         
         choice = input(Fore.LIGHTWHITE_EX + "Please Select Your Setup Option: ")
         
@@ -402,7 +404,7 @@ def main_menu():
             input(Fore.LIGHTWHITE_EX + "Press Enter To Return To Main Menu...")
         elif choice == "2":
             print(Fore.LIGHTBLUE_EX + "\nStarting Update...")
-            if download_and_prepare_repository(inplace)
+            if download_and_prepare_repository(inplace):
                 if download_and_prepare_repository(update=True):
                     if perform_setup():
                         print(Fore.LIGHTGREEN_EX + "\nUpdate Completed Successfully")
