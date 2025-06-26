@@ -386,9 +386,7 @@ def main_menu():
         """)
         print(Fore.LIGHTBLUE_EX + "[1] Setup (Initial Installation)")
         print(Fore.LIGHTMAGENTA_EX + "[2] Update (Download And Reinstall)")
-        print(Fore.LIGHTRED_EX
-
- + "[3] Exit")
+        print(Fore.LIGHTRED_EX + "[3] Exit")
         
         choice = input(Fore.LIGHTWHITE_EX + "Please Select Your Setup Option: ")
         
