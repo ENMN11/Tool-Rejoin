@@ -16,7 +16,7 @@ HOME_DIR = "/data/data/com.termux/files/home"
 ZIP_PATH = os.path.join(HOME_DIR, "Nexus.zip")
 EXTRACTED_DIR = os.path.join(HOME_DIR, "Nexus")
 DOWNLOADS_DIR = "/storage/emulated/0/Download"
-AUTOEXEC_DIR = "/storage/emulated/0/Arceus X/Autoexec"
+AUTOEXEC_DIR = "/storage/emulated/0/RonixExploit/autoexec"
 ANDROID_ID = "9c47a1f3b6e8d2c5"
 
 APKS = {
@@ -152,7 +152,25 @@ def disable_bloatware_apps():
         "com.android.nfc",
         "com.android.simappdialog",
         "com.google.android.tag",
-        "com.android.bluetoothmidiservice"
+        "com.android.bluetoothmidiservice",
+        "com.google.android.apps.messaging",
+        "com.google.android.dialer",
+        "com.android.mms",
+        "com.android.messaging",
+        "com.android.dialer",
+        "com.android.contacts",
+        "com.samsung.android.messaging",
+        "com.android.mms.service",
+        "com.miui.smsservice",
+        "com.coloros.mms",
+        "com.vivo.message",
+        "com.huawei.message",
+        "com.lge.message",
+        "com.sonyericsson.conversations",
+        "com.motorola.messaging",
+        "com.transsion.message",
+        "com.android.cellbroadcastreceiver",
+        "com.android.cellbroadcastservice"
     ]
 
     for package_name in apps_to_disable:
@@ -188,24 +206,8 @@ def install_apk(apk_file, pkg_name):
             print(Fore.LIGHTGREEN_EX + f"Installed {apk_file} Successfully")
             return True
         else:
-            print(Fore.LIGHTYELLOW_EX + f"Installation Failed, Attempting to Enable Unknown Sources...")
-            
-            enable_unknown_sources_cmd = [
-                "settings", "put", "secure", "install_non_market_apps", "1"
-            ]
-            if run_command(enable_unknown_sources_cmd, check_success=True):
-                print(Fore.LIGHTGREEN_EX + "Enabled Install Unknown Apps")
-            else:
-                print(Fore.LIGHTRED_EX + "Failed to Enable Install Unknown Apps")
-                return False
-
-            result = run_command(install_cmd, check_success=False)
-            if result and result.returncode == 0:
-                print(Fore.LIGHTGREEN_EX + f"Installed {apk_file} Successfully After Enabling Unknown Sources")
-                return True
-            else:
-                print(Fore.LIGHTRED_EX + f"Installation Failed For {apk_file} Even After Enabling Unknown Sources")
-                return False
+            print(Fore.LIGHTRED_EX + f"Installation Failed For {apk_file}")
+            return False
     except Exception as e:
         print(Fore.LIGHTRED_EX + f"Error Installing {apk_file}: {e}")
         return False
@@ -228,7 +230,7 @@ def move_extracted_files(files_to_move, destination_directory):
         source_path = os.path.join(EXTRACTED_DIR, file_name)
         destination_path = os.path.join(destination_directory, file_name)
         if not os.path.exists(source_path):
-            print(Fore.LIGHTRED_EX + f"Source File Not Found: {source_path}, Skipping")
+            print(Fore18            print(Fore.LIGHTRED_EX + f"Source File Not Found: {source_path}, Skipping")
             continue
         try:
             if os.path.exists(destination_path):
