@@ -230,7 +230,7 @@ def move_extracted_files(files_to_move, destination_directory):
         source_path = os.path.join(EXTRACTED_DIR, file_name)
         destination_path = os.path.join(destination_directory, file_name)
         if not os.path.exists(source_path):
-            print(Fore18            print(Fore.LIGHTRED_EX + f"Source File Not Found: {source_path}, Skipping")
+            print(Fore.LIGHTRED_EX + f"Source File Not Found: {source_path}, Skipping")
             continue
         try:
             if os.path.exists(destination_path):
