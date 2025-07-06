@@ -25,7 +25,7 @@ APKS = {
     "PocoLauncher.apk": "com.mi.android.globallaunches"
 }
 
-EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "FPS.py"]
+EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 def clear_screen():
