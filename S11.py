@@ -17,7 +17,7 @@ ZIP_PATH = os.path.join(HOME_DIR, "Nexus.zip")
 EXTRACTED_DIR = os.path.join(HOME_DIR, "Nexus")
 DOWNLOADS_DIR = "/storage/emulated/0/Download"
 AUTOEXEC_DIR = "/storage/emulated/0/RonixExploit/autoexec"
-ANDROID_ID = "9c47a1f3b6e8d2c5"
+ANDROID_ID = "36ea1127de363534"
 
 APKS = {
     "MTManager.apk": "bin.mt.plus",
