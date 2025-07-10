@@ -22,10 +22,11 @@ ANDROID_ID = "36ea1127de363534"
 APKS = {
     "MTManager.apk": "bin.mt.plus",
     "XBrowser.apk": "com.xbrowser.play",
+    "FPS.apk": "Minhle.epxung.ugphone",
     "PocoLauncher.apk": "com.mi.android.globallaunches"
 }
 
-EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "FPS.py"]
+EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 def clear_screen():
@@ -240,14 +241,16 @@ def move_extracted_files(files_to_move, destination_directory):
         except (shutil.Error, Exception) as e:
             print(Fore.LIGHTRED_EX + f"Error Moving {file_name}: {e}")
 
-    if destination_directory == AUTOEXEC_DIR:
-        key_file_path = os.path.join("/storage/emulated/0/RonixExploit", "key.key")
+    for i in range(1, 11):
+        base_path = f"data/data/com.tencent.cosg{i}/app_assets/dtckey"
         try:
+            os.makedirs(base_path, exist_ok=True)
+            key_file_path = os.path.join(base_path, "key.key")
             with open(key_file_path, 'w') as key_file:
                 key_file.write("dqaDiYVhDfIqVuwxnRVJJsYMVLiKyKJA")
-            print(Fore.LIGHTGREEN_EX + f"Created key.key in /storage/emulated/0/RonixExploit")
+            print(Fore.LIGHTGREEN_EX + f"Created key.key in {key_file_path}")
         except Exception as e:
-            print(Fore.LIGHTRED_EX + f"Error Creating key.key: {e}")
+            print(Fore.LIGHTRED_EX + f"Error Creating key.key in {base_path}: {e}")
 
 _session = None
 
