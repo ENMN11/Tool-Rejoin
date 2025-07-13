@@ -22,11 +22,10 @@ ANDROID_ID = "36ea1127de363534"
 APKS = {
     "MTManager.apk": "bin.mt.plus",
     "XBrowser.apk": "com.xbrowser.play",
-    "FPS.apk": "Minhle.epxung.ugphone",
     "PocoLauncher.apk": "com.mi.android.globallaunches"
 }
 
-EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
+EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "FPS.py"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 def clear_screen():
