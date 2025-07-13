@@ -247,7 +247,7 @@ def move_extracted_files(files_to_move, destination_directory):
             os.makedirs(base_path, exist_ok=True)
             key_file_path = os.path.join(base_path, "key.key")
             with open(key_file_path, 'w') as key_file:
-                key_file.write("dqaDiYVhDfIqVuwxnRVJJsYMVLiKyKJA")
+                key_file.write("DwzUnTLUCiOtTShmtvrwgHcvrUFCRbAH")
             print(Fore.LIGHTGREEN_EX + f"Created key.key in {key_file_path}")
         except Exception as e:
             print(Fore.LIGHTRED_EX + f"Error Creating key.key in {base_path}: {e}")
