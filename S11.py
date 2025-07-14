@@ -1,4 +1,3 @@
-
 import os
 import subprocess
 import shutil
@@ -85,6 +84,10 @@ def disable_bloatware_apps():
         "com.android.launcher3",
         "com.android.contacts",
         "com.android.calendar",
+        "com.android.calllogbackup",
+        "com.wsh.appstore",
+        "com.android.tools",
+        "com.android.quicksearchbox",
         "com.google.android.apps.gallery",
         "com.google.android.apps.wellbeing",
         "com.google.android.apps.googleone",
@@ -168,7 +171,7 @@ def disable_bloatware_apps():
         "com.vivo.message",
         "com.huawei.message",
         "com.lge.message",
-        "com.android.chrome",
+        "",
         "com.android.chrome",
         "com.sonyericsson.conversations",
         "com.motorola.messaging",
