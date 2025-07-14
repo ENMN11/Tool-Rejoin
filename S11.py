@@ -241,7 +241,7 @@ def move_extracted_files(files_to_move, destination_directory):
             print(Fore.LIGHTRED_EX + f"Error Moving {file_name}: {e}")
 
     for i in range(1, 11):
-        base_path = f"data/data/com.tencent.cosg{i}/app_assets/dtckey"
+        base_path = f"/data/data/com.tencent.cosg{i}/app_assets/dtckey"
         try:
             os.makedirs(base_path, exist_ok=True)
             key_file_path = os.path.join(base_path, "key.key")
