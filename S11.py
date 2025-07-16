@@ -16,7 +16,7 @@ HOME_DIR = "/data/data/com.termux/files/home"
 ZIP_PATH = os.path.join(HOME_DIR, "Nexus.zip")
 EXTRACTED_DIR = os.path.join(HOME_DIR, "Nexus")
 DOWNLOADS_DIR = "/storage/emulated/0/Download"
-AUTOEXEC_DIR = "/storage/emulated/0/RonixExploit/autoexec"
+AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec"
 ANDROID_ID = "36ea1127de363534"
 
 APKS = {
@@ -57,8 +57,22 @@ def is_package_installed(pkg_name):
     package_dir = os.path.join("/data/data", pkg_name)
     return os.path.isdir(package_dir)
 
+def uninstall_specific_packages():
+    packages_to_uninstall = [
+        "com.og.toolcenter",
+        "com.og.gamecenter"
+    ]
+
+    for package_name in packages_to_uninstall:
+        print(Fore.LIGHTYELLOW_EX + f"Uninstalling {package_name}...")
+        if run_command(["pm", "uninstall", "--user", "0", package_name], check_success=True):
+            print(Fore.LIGHTGREEN_EX + f"Successfully uninstalled {package_name}")
+        else:
+            print(Fore.LIGHTRED_EX + f"Failed to uninstall {package_name}")
+
 def disable_bloatware_apps():
     apps_to_disable = [
+        "net.sourceforge.opencamera",
         "com.google.android.googlequicksearchbox",
         "com.google.android.gms",
         "com.android.chrome",
@@ -247,16 +261,31 @@ def move_extracted_files(files_to_move, destination_directory):
         except (shutil.Error, Exception) as e:
             print(Fore.LIGHTRED_EX + f"Error Moving {file_name}: {e}")
 
-    for i in range(1, 11):
-        base_path = f"/data/data/com.tencent.cosg{i}/app_assets/dtckey"
-        try:
-            os.makedirs(base_path, exist_ok=True)
-            key_file_path = os.path.join(base_path, "key.key")
-            with open(key_file_path, 'w') as key_file:
-                key_file.write("MWUqzcIhhAXzUyJUdASNhOQngdfwJdTR")
-            print(Fore.LIGHTGREEN_EX + f"Created key.key in {key_file_path}")
-        except Exception as e:
-            print(Fore.LIGHTRED_EX + f"Error Creating key.key in {base_path}: {e}")
+    workspace_path = "/storage/emulated/0/Cryptic/Workspace"
+    key_filename = "cryptic_key.DEPOSIBLE"
+    full_key_path = os.path.join(workspace_path, key_filename)
+    expected_key_text = "ACRNQyuwuunJyHkRdXtvWoSMwfceGipX"
+
+    try:
+        if not os.path.exists(workspace_path):
+            os.makedirs(workspace_path)
+            print(Fore.LIGHTGREEN_EX + f"Created workspace directory: {workspace_path}")
+        
+        if not os.path.exists(full_key_path):
+            with open(full_key_path, 'w') as f:
+                f.write(expected_key_text)
+            print(Fore.LIGHTGREEN_EX + f"Created {key_filename} with correct key text.")
+        else:
+            with open(full_key_path, 'r') as f:
+                current_text = f.read().strip()
+            if current_text != expected_key_text:
+                with open(full_key_path, 'w') as f:
+                    f.write(expected_key_text)
+                print(Fore.LIGHTYELLOW_EX + f"Updated {key_filename} with correct key text.")
+            else:
+                print(Fore.LIGHTCYAN_EX + f"{key_filename} already contains the correct key.")
+    except Exception as e:
+        print(Fore.LIGHTRED_EX + f"Error handling workspace or {key_filename}: {e}")
 
 _session = None
 
@@ -390,6 +419,7 @@ def perform_setup():
         print(Fore.LIGHTGREEN_EX + "Root Permissions Granted")
     
     disable_bloatware_apps()
+    uninstall_specific_packages()
     set_android_id()
     
     move_extracted_files(EXTRA_FILES, DOWNLOADS_DIR)
