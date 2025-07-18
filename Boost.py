@@ -51,10 +51,10 @@ def optimize():
     for x in glob('/sys/devices/system/cpu/cpu*/cpuidle/state*/disable'): w(x, 1)
 
     for q in glob('/sys/block/*/queue'):
-        w(q + '/read_ahead_kb', 16384)
+        w(q + '/read_ahead_kb', 20480)
         w(q + '/iostats', 0)
         w(q + '/rq_affinity', 1)
-        w(q + '/nr_requests', 8192)
+        w(q + '/nr_requests', 15360)
         sc = q + '/scheduler'
         if os.path.exists(sc):
             for t in ['none', 'mq-deadline', 'kyber', 'noop']:
