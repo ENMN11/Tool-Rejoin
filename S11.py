@@ -31,7 +31,7 @@ APKS = {
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
-EXTRA_FILES = ["config-change.json", "Nexus.py", "Cookie.txt"]
+EXTRA_FILES = ["config-change.json", "Nexus.py", "Cookie.txt", "Boost.py"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 def clear_screen():
