@@ -63,8 +63,8 @@ def is_package_installed(pkg_name):
     package_dir = os.path.join("/data/data", pkg_name)
     return os.path.isdir(package_dir)
 
-def disable_bloatware_apps():
-    apps_to_disable = [
+def uninstall_bloatware_apps():
+    apps_to_uninstall = [
         "net.sourceforge.opencamera",
         "com.google.android.googlequicksearchbox",
         "com.google.android.gms",
@@ -180,7 +180,6 @@ def disable_bloatware_apps():
         "com.vivo.message",
         "com.huawei.message",
         "com.lge.message",
-        "",
         "com.android.chrome",
         "com.sonyericsson.conversations",
         "com.motorola.messaging",
@@ -189,9 +188,9 @@ def disable_bloatware_apps():
         "com.android.cellbroadcastservice"
     ]
 
-    for package_name in apps_to_disable:
+    for package_name in apps_to_uninstall:
         if run_command(["pm", "uninstall", "--user", "0", package_name], check_success=True):
-            print(Fore.LIGHTGREEN_EX + f"Disabled {package_name}")
+            print(Fore.LIGHTGREEN_EX + f"Uninstalled: {package_name}")
 
 def set_android_id():
     print(Fore.LIGHTYELLOW_EX + f"Setting Android ID to {ANDROID_ID}...", end=" ")
@@ -454,8 +453,7 @@ def perform_setup():
     else:
         print(Fore.LIGHTGREEN_EX + "Root Permissions Granted")
     
-    disable_bloatware_apps()
-    uninstall_specific_packages()
+    uninstall_bloatware_apps()
     set_android_id()
     disable_animations()
     clean_junk_files()
