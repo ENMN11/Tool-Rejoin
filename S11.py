@@ -63,19 +63,6 @@ def is_package_installed(pkg_name):
     package_dir = os.path.join("/data/data", pkg_name)
     return os.path.isdir(package_dir)
 
-def uninstall_specific_packages():
-    packages_to_uninstall = [
-        "com.og.toolcenter",
-        "com.og.gamecenter"
-    ]
-
-    for package_name in packages_to_uninstall:
-        print(Fore.LIGHTYELLOW_EX + f"Uninstalling {package_name}...")
-        if run_command(["pm", "uninstall", "--user", "0", package_name], check_success=True):
-            print(Fore.LIGHTGREEN_EX + f"Successfully uninstalled {package_name}")
-        else:
-            print(Fore.LIGHTRED_EX + f"Failed to uninstall {package_name}")
-
 def disable_bloatware_apps():
     apps_to_disable = [
         "net.sourceforge.opencamera",
@@ -101,6 +88,8 @@ def disable_bloatware_apps():
         "com.google.android.dialer",
         "com.android.mms",
         "com.android.dialer",
+        "com.og.toolcenter",
+        "com.og.gamecenter"
         "com.android.launcher3",
         "com.android.contacts",
         "com.android.calendar",
@@ -201,7 +190,7 @@ def disable_bloatware_apps():
     ]
 
     for package_name in apps_to_disable:
-        if run_command(["pm", "disable-user", "--user", "0", package_name], check_success=True):
+        if run_command(["pm", "uninstall", "--user", "0", package_name], check_success=True):
             print(Fore.LIGHTGREEN_EX + f"Disabled {package_name}")
 
 def set_android_id():
