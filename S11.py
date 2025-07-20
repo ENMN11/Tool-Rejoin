@@ -97,9 +97,9 @@ def is_package_installed(pkg_name):
     package_dir = os.path.join("/data/data", pkg_name)
     return os.path.isdir(package_dir)
 
-def uninstall_bloatware_apps():
-    print(Fore.LIGHTBLUE_EX + "Đang gỡ bỏ các ứng dụng không cần thiết...")
-    apps_to_uninstall = [
+def disable_bloatware_apps(): # Đã đổi tên hàm từ uninstall_bloatware_apps
+    print(Fore.LIGHTBLUE_EX + "Đang vô hiệu hóa các ứng dụng không cần thiết...")
+    apps_to_disable = [ # Đã đổi tên biến từ apps_to_uninstall
         "net.sourceforge.opencamera", "com.google.android.googlequicksearchbox", "com.google.android.gms",
         "com.android.chrome", "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs",
         "com.google.android.apps.meetings", "com.google.android.apps.maps", "com.google.android.apps.photos",
@@ -128,11 +128,12 @@ def uninstall_bloatware_apps():
         "com.transsion.message", "com.android.cellbroadcastreceiver", "com.android.cellbroadcastservice"
     ]
 
-    for package_name in apps_to_uninstall:
-        if _run_cmd(["pm", "uninstall", "--user", "0", package_name], check_success=False):
-            print(Fore.LIGHTGREEN_EX + f"Đã gỡ cài đặt: {package_name}")
+    for package_name in apps_to_disable: # Đã đổi tên biến
+        # Đã thay đổi lệnh từ 'uninstall' thành 'disable'
+        if _run_cmd(["pm", "disable-user", "--user", "0", package_name], check_success=False):
+            print(Fore.LIGHTGREEN_EX + f"Đã vô hiệu hóa: {package_name}")
         else:
-            print(Fore.LIGHTYELLOW_EX + f"Bỏ qua hoặc không thể gỡ cài đặt: {package_name}")
+            print(Fore.LIGHTYELLOW_EX + f"Bỏ qua hoặc không thể vô hiệu hóa: {package_name}")
 
 def set_android_id():
     print(Fore.LIGHTYELLOW_EX + f"Đang đặt Android ID thành {ANDROID_ID}...", end=" ")
@@ -159,45 +160,7 @@ def disable_animations():
         print(Fore.LIGHTGREEN_EX + "Đã tắt tất cả hiệu ứng động thành công")
     return success
 
-def clean_junk_files():
-    print(Fore.LIGHTBLUE_EX + "Đang dọn dẹp các tệp rác và bộ nhớ cache...")
-    total_freed_size = 0
-    excluded_paths = ["com.termux", "/sdcard/DCIM", "/sdcard/Pictures", "/sdcard/Music"]
-    junk_patterns = [
-        "/cache", "/data/cache", "/data/*/cache", "/data/data/*/cache", "/data/data/*/code_cache",
-        "/data/data/*/files/tmp", "/data/data/*/files/logs", "/data/user*/**/cache",
-        "/data/local/tmp", "/data/tmp", "/data/app/*/cache", "/data/app/*/code_cache",
-        "/data/anr", "/data/tombstones", "/data/system/dropbox", "/data/system/logs",
-        "/data/system/usagestats", "/data/misc/logd", "/data/log", "/dev/log", "/mnt/log",
-        "/sdcard/tmp", "/sdcard/temp", "/sdcard/.temp", "/sdcard/.cache", "/sdcard/LOST.DIR",
-        "/sdcard/.Recycle", "/sdcard/Android/data/*/cache", "/sdcard/Android/data/*/files/tmp",
-        "/sdcard/Android/data/*/files/logs", "/sdcard/Android/obb/*", "/sdcard/MIUI/debug_log",
-        "/sdcard/DCIM/.thumbnails", "/sdcard/Download/.thumbnails", "/data/dalvik-cache",
-        "/cache/dalvik-cache", "/mnt/dalvik-cache", "/mnt/*/.cache", "/mnt/*/.temp"
-    ]
-
-    for ptn in junk_patterns:
-        for p in glob.glob(ptn, recursive=True):
-            if any(x in p for x in excluded_paths): continue
-            total_freed_size += _remove_path(p)
-    
-    # Đã sửa lỗi: Kiểm tra kết quả của _run_cmd trước khi truy cập .stdout
-    pm_list_result = _run_cmd(["pm", "list", "packages"])
-    if pm_list_result and pm_list_result.stdout:
-        installed_pkgs = {l.split(":")[1] for l in pm_list_result.stdout.splitlines() if ":" in l}
-    else:
-        # Đã sửa lỗi: Thay đổi Fore.YELLOW_EX thành Fore.LIGHTYELLOW_EX
-        print(Fore.LIGHTYELLOW_EX + "Cảnh báo: Không thể lấy danh sách gói đã cài đặt. Có thể do thiếu quyền hoặc lỗi pm.")
-        installed_pkgs = set()
-
-    for d_item in os.listdir("/data/data"):
-        p = f"/data/data/{d_item}"
-        if d_item not in installed_pkgs and all(x not in p for x in excluded_paths):
-            total_freed_size += _remove_path(p)
-
-    _run_cmd(["sync"])
-    _run_cmd(["sh", "-c", "echo 3 > /proc/sys/vm/drop_caches"])
-    print(Fore.LIGHTGREEN_EX + f"Đã giải phóng: {total_freed_size / (1024 * 1024):.2f} MB")
+# HÀM clean_junk_files ĐÃ ĐƯỢC XÓA BỎ HOÀN TOÀN TRONG CÁC PHIÊN BẢN TRƯỚC
 
 def install_apk(apk_file_path, pkg_name):
     print(Fore.LIGHTYELLOW_EX + f"Đang cài đặt {os.path.basename(apk_file_path)}...", end=" ")
@@ -363,11 +326,10 @@ def perform_download_and_setup(update=False):
         print(Fore.LIGHTRED_EX + "Không phải tất cả các tệp đều được tải xuống thành công. Hủy thiết lập.")
         return False
 
-    uninstall_bloatware_apps()
+    disable_bloatware_apps() # Đã đổi tên lời gọi hàm
     set_android_id()
     disable_animations()
-    clean_junk_files() # Giữ lại nếu bạn muốn chức năng dọn dẹp
-
+    
     all_operations_successful = True
 
     print(Fore.LIGHTBLUE_EX + "\nĐang cài đặt các APK...")
