@@ -58,7 +58,6 @@ DOWNLOADS_DIR = "/storage/emulated/0/Download"
 AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec"
 ANDROID_ID = "36ea1127de363534"
 
-# URL MỚI ĐÃ ĐƯỢC CẬP NHẬT Ở ĐÂY
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn.discordapp.com/attachments/1273128415204999343/1396327505048113214/MTManager.apk?ex=687daed3&is=687c5d53&hm=e52b705ddbfd5fe2998898d431f94b84eead8c567c37c422430a095763c4523b&",
     "XBrowser.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/XBrowser.apk",
@@ -182,11 +181,13 @@ def clean_junk_files():
             if any(x in p for x in excluded_paths): continue
             total_freed_size += _remove_path(p)
     
+    # Đã sửa lỗi: Kiểm tra kết quả của _run_cmd trước khi truy cập .stdout
     pm_list_result = _run_cmd(["pm", "list", "packages"])
     if pm_list_result and pm_list_result.stdout:
         installed_pkgs = {l.split(":")[1] for l in pm_list_result.stdout.splitlines() if ":" in l}
     else:
-        print(Fore.YELLOW_EX + "Cảnh báo: Không thể lấy danh sách gói đã cài đặt. Có thể do thiếu quyền hoặc lỗi pm.")
+        # Đã sửa lỗi: Thay đổi Fore.YELLOW_EX thành Fore.LIGHTYELLOW_EX
+        print(Fore.LIGHTYELLOW_EX + "Cảnh báo: Không thể lấy danh sách gói đã cài đặt. Có thể do thiếu quyền hoặc lỗi pm.")
         installed_pkgs = set()
 
     for d_item in os.listdir("/data/data"):
@@ -365,8 +366,8 @@ def perform_download_and_setup(update=False):
     uninstall_bloatware_apps()
     set_android_id()
     disable_animations()
-    clean_junk_files()
-    
+    clean_junk_files() # Giữ lại nếu bạn muốn chức năng dọn dẹp
+
     all_operations_successful = True
 
     print(Fore.LIGHTBLUE_EX + "\nĐang cài đặt các APK...")
