@@ -59,8 +59,8 @@ AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec"
 ANDROID_ID = "36ea1127de363534"
 
 FILE_DOWNLOAD_URLS = {
-    "MTManager.apk": "https://pixeldrain.com/api/file/qvWqUdDE?download",
-    "Via.apk": "https://pixeldrain.com/api/file/sga4L5X1?download",
+    "MTManager.apk": "https://files.catbox.moe/blxs0h.apk",
+    "Via.apk": "https://files.catbox.moe/0cg51o.apk",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
