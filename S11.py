@@ -60,7 +60,7 @@ ANDROID_ID = "36ea1127de363534"
 
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://pixeldrain.com/api/file/qvWqUdDE?download",
-    "XBrowser.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/XBrowser.apk",
+    "Via.apk": "https://pixeldrain.com/api/file/sga4L5X1?download",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
@@ -72,7 +72,7 @@ FILE_DOWNLOAD_URLS = {
 
 APKS = {
     "MTManager.apk": "bin.mt.plus",
-    "XBrowser.apk": "com.xbrowser.play",
+    "Via.apk": "mark.via.gp",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
