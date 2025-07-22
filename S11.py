@@ -59,7 +59,7 @@ AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec"
 ANDROID_ID = "36ea1127de363534"
 
 FILE_DOWNLOAD_URLS = {
-    "MTManager.apk": "https://cdn.discordapp.com/attachments/1273128415204999343/1396327505048113214/MTManager.apk?ex=687daed3&is=687c5d53&hm=e52b705ddbfd5fe2998898d431f94b84eead8c567c37c422430a095763c4523b&",
+    "MTManager.apk": "https://pixeldrain.com/api/file/qvWqUdDE?download",
     "XBrowser.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/XBrowser.apk",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
