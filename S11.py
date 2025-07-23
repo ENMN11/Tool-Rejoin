@@ -1,3 +1,4 @@
+
 import os
 import subprocess
 import shutil
@@ -100,7 +101,7 @@ def is_package_installed(pkg_name):
 def disable_bloatware_apps(): # Đã đổi tên hàm từ uninstall_bloatware_apps
     print(Fore.LIGHTBLUE_EX + "Đang vô hiệu hóa các ứng dụng không cần thiết...")
     apps_to_disable = [ # Đã đổi tên biến từ apps_to_uninstall
-        "net.sourceforge.opencamera", "com.google.android.googlequicksearchbox", "com.google.android.gms",
+        "com.wsh.toolkit", "com.wsh.appstorage", "com.wsh.launcher2", "com.android.calculator2", "com.android.music", "com.android.musicfx", "com.sohu.inputmethod.sogou", "net.sourceforge.opencamera", "com.google.android.googlequicksearchbox", "com.google.android.gms",
         "com.android.chrome", "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs",
         "com.google.android.apps.meetings", "com.google.android.apps.maps", "com.google.android.apps.photos",
         "com.google.android.contacts", "com.google.android.calendar", "com.android.vending", "com.google.ar.core",
