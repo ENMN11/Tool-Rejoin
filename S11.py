@@ -65,7 +65,7 @@ FILE_DOWNLOAD_URLS = {
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
-    "Boost.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Boost.py",
+    "Clean.sh": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Clean.sh",
     "BananaHubGOD.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubGOD.txt",
     "Trackstat.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Trackstat.txt"
 }
