@@ -76,7 +76,7 @@ APKS = {
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
-EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "Boost.py"]
+EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "Clean.sh"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 MAX_DOWNLOAD_WORKERS = 17
