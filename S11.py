@@ -88,7 +88,7 @@ APKS = {
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
-MAX_DOWNLOAD_WORKERS = 3
+MAX_DOWNLOAD_WORKERS = 13
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
@@ -252,7 +252,7 @@ def get_requests_session():
 def download_file_task(file_name, url, destination_path, pbar_main):
     session = get_requests_session()
     try:
-        block_size = 262144
+        block_size = 16384
         response = session.get(url, stream=True, verify=False, timeout=120)
         response.raise_for_status()
 
