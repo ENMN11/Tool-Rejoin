@@ -88,7 +88,7 @@ APKS = {
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
-MAX_DOWNLOAD_WORKERS = 13
+MAX_DOWNLOAD_WORKERS = 3
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
