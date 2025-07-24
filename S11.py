@@ -64,7 +64,6 @@ FILE_DOWNLOAD_URLS = {
     "2.apk": "https://files.catbox.moe/j17ngx.apk",
     "3.apk": "https://files.catbox.moe/9dfmoe.apk",
     "4.apk": "https://files.catbox.moe/m5fmgw.apk",
-    "5.apk": "https://files.catbox.moe/p68mw5.apk",
     "Via.apk": "https://files.catbox.moe/0cg51o.apk",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
@@ -81,14 +80,13 @@ APKS = {
     "2.apk": "com.roblox.client3",
     "3.apk": "com.roblox.client4",
     "4.apk": "com.roblox.client5",
-    "5.apk": "com.roblox.client6",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
-MAX_DOWNLOAD_WORKERS = 13
+MAX_DOWNLOAD_WORKERS = 3
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
@@ -252,7 +250,7 @@ def get_requests_session():
 def download_file_task(file_name, url, destination_path, pbar_main):
     session = get_requests_session()
     try:
-        block_size = 16384
+        block_size = 8192
         response = session.get(url, stream=True, verify=False, timeout=120)
         response.raise_for_status()
 
