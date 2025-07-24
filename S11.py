@@ -66,7 +66,6 @@ FILE_DOWNLOAD_URLS = {
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
-    "Clean.sh": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Clean.sh",
     "BananaHubGOD.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubGOD.txt",
     "Trackstat.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Trackstat.txt"
 }
@@ -77,7 +76,7 @@ APKS = {
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
-EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt", "Clean.sh"]
+EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["BananaHubGOD.txt", "Trackstat.txt"]
 
 MAX_DOWNLOAD_WORKERS = 17
