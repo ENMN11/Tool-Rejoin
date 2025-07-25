@@ -40,4 +40,3 @@ s(function()
 	f.BackgroundColor3=Color3.new()
 	f.BorderSizePixel=0
 end)
-setfpscap(20)
