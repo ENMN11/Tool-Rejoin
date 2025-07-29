@@ -59,7 +59,7 @@ AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec/"
 ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
-    "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/9dbf563d-01bf-4670-9242-192f72af0fb9",
+    "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/be18e112-17a6-4a63-a9d9-37fad898a1c4",
     "1.apk": "https://cdn-01.anonfiles.ch/_static/249f754d-947c-4de6-900c-8ad718bf0bf0",
     "2.apk": "https://cdn-01.anonfiles.ch/_static/15c24ca2-5b72-43bb-a57c-f5a546f58b10",
     "3.apk": "https://cdn-01.anonfiles.ch/_static/1e08c167-3731-4661-a2c7-a12c04145782",
