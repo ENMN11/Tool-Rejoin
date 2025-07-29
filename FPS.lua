@@ -1,4 +1,3 @@
-Xoá black screen:
 local g,w,l,t,p=game,workspace,game.Lighting,workspace.Terrain,game.Players.LocalPlayer
 local c=w.CurrentCamera
 local function s(f)pcall(f)end
