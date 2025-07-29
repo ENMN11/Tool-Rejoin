@@ -31,4 +31,3 @@ end
 for _,v in next,w:GetDescendants()do gho(v)end
 for _,v in next,getnilinstances()do gho(v)for _,v2 in next,v:GetDescendants()do gho(v2)end end
 w.DescendantAdded:Connect(gho)
-s(function() game:GetService("RunService"):Set3dRenderingEnabled(false) end)
