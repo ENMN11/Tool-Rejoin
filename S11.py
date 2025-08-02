@@ -69,7 +69,8 @@ FILE_DOWNLOAD_URLS = {
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
-    "con_cac_ba_may.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/con_cac_ba_may.luau"
+    "con_cac_ba_may.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/con_cac_ba_may.luau",
+    "check-info.lua": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/check-info.lua"
 }
 
 APKS = {
@@ -83,7 +84,7 @@ APKS = {
 }
 
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
-AUTOEXEC_FILES = ["con_cac_ba_may.luau"]
+AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check-info.lua"]
 
 MAX_DOWNLOAD_WORKERS = 11
 
