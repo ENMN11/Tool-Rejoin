@@ -61,30 +61,30 @@ ANDROID_ID = "b419fa14320149db"
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/be18e112-17a6-4a63-a9d9-37fad898a1c4",
     "1.apk": "https://cdn-01.anonfiles.ch/_static/1535a103-1510-4421-8310-07fad482cd7f",
-    "3.apk": "https://cdn-01.anonfiles.ch/_static/05c7a6c4-42d2-4b76-b7b9-e7fef1c78faa",
-    "4.apk": "https://cdn-01.anonfiles.ch/_static/c095bc97-85aa-4afb-895f-7edf7da38a32",
-    "5.apk": "https://cdn-01.anonfiles.ch/_static/73ce99b2-5ea3-4c89-8627-330952a030dd",
+    "2.apk": "https://cdn-01.anonfiles.ch/_static/05c7a6c4-42d2-4b76-b7b9-e7fef1c78faa",
+    "3.apk": "https://cdn-01.anonfiles.ch/_static/c095bc97-85aa-4afb-895f-7edf7da38a32",
+    "4.apk": "https://cdn-01.anonfiles.ch/_static/73ce99b2-5ea3-4c89-8627-330952a030dd",
     "Via.apk": "https://cdn-01.anonfiles.ch/_static/f9f5ddc1-fb31-4b80-9b4a-80630af18619",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
     "con_cac_ba_may.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/con_cac_ba_may.luau",
-    "check-info.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/check-info.luau"
+    "check_info.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/check_info.luau"
 }
 
 APKS = {
     "MTManager.apk": "bin.mt.plus",
     "Via.apk": "mark.via.gp",
     "1.apk": "com.roblox.client2",
-    "3.apk": "com.roblox.client4",
-    "4.apk": "com.roblox.client5",
-    "5.apk": "com.roblox.client6",
+    "2.apk": "com.roblox.client4",
+    "3.apk": "com.roblox.client5",
+    "4.apk": "com.roblox.client6",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
-AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check-info.luau"]
+AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check_info.luau"]
 
 MAX_DOWNLOAD_WORKERS = 11
 
