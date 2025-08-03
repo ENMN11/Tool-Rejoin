@@ -86,7 +86,7 @@ APKS = {
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check-info.lua"]
 
-MAX_DOWNLOAD_WORKERS = 11
+MAX_DOWNLOAD_WORKERS = 12
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
