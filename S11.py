@@ -70,7 +70,7 @@ FILE_DOWNLOAD_URLS = {
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
     "con_cac_ba_may.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/con_cac_ba_may.luau",
-    "check-info.lua": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/check-info.lua"
+    "check-info.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/check-info.luau"
 }
 
 APKS = {
