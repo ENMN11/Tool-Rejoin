@@ -77,16 +77,16 @@ APKS = {
     "MTManager.apk": "bin.mt.plus",
     "Via.apk": "mark.via.gp",
     "1.apk": "com.roblox.client2",
-    "2.apk": "com.roblox.client4",
-    "3.apk": "com.roblox.client5",
-    "4.apk": "com.roblox.client6",
+    "2.apk": "com.roblox.client3",
+    "3.apk": "com.roblox.client4",
+    "4.apk": "com.roblox.client5",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check_info.luau"]
 
-MAX_DOWNLOAD_WORKERS = 11
+MAX_DOWNLOAD_WORKERS = 12
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
