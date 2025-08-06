@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~
+[ -d storage ] && rm -rf storage
+termux-setup-storage
+pkg update -y && pkg upgrade -y
+source <(curl -s https://raw.githubusercontent.com/u400822/setup-termux/refs/heads/main/termux-change-repo.sh)
+pkg i -y python python-pip
+pip install --quiet requests prettytable pycryptodome
+
+[ "$(uname -m)" = "aarch64" ] && {
+  curl -sLO https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/psutil.zip
+  unzip -q psutil.zip
+  cp -rn psutil/* "$(python -c 'import site; print(site.getsitepackages()[0])')"
+  rm -rf psutil*
+}
+
+curl -sLo ~/storage/downloads/S11.py https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py
