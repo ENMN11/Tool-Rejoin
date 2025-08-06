@@ -11,7 +11,7 @@ yes | pkg i python
 yes | pkg i python-pip
 pip install requests prettytable pycryptodome tqdm colorama
 if [ "$(uname -m)" = "aarch64" ]; then
-    curl -Ls "https://cdn.shouko.dev/neyoshiiuem/psutil.zip" -o psutil.zip
+    curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/psutil.zip" -o psutil.zip
     unzip psutil.zip
     cp -rn psutil/* /data/data/com.termux/files/usr/lib/python3.12/site-packages
     rm -rf psutil*
