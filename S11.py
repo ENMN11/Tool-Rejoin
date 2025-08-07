@@ -55,7 +55,7 @@ def _remove_path(path):
 
 HOME_DIR = "/data/data/com.termux/files/home"
 DOWNLOADS_DIR = "/storage/emulated/0/Download"
-AUTOEXEC_DIR = "/storage/emulated/0/Cryptic/Autoexec/"
+AUTOEXEC_DIR = "/storage/emulated/0/RonixExploit/Autoexec/"
 ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
