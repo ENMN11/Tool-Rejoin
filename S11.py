@@ -64,7 +64,6 @@ FILE_DOWNLOAD_URLS = {
     "2.apk": "https://cdn-01.anonfiles.ch/_static/e545932b-3c2f-41a7-b8e3-f1bfeb224f6e",
     "3.apk": "https://cdn-01.anonfiles.ch/_static/140d881b-7c1e-43cf-ab1e-9914a21dfcea",
     "4.apk": "https://cdn-01.anonfiles.ch/_static/7451be16-289b-4d5b-8d5a-90849a77001e",
-    "5.apk": "https://cdn-01.anonfiles.ch/_static/01535c0a-5ab9-4b2e-9b8e-7309bebe0bcc",
     "Via.apk": "https://cdn-01.anonfiles.ch/_static/f9f5ddc1-fb31-4b80-9b4a-80630af18619",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
@@ -81,14 +80,13 @@ APKS = {
     "2.apk": "com.roblox.client2",
     "3.apk": "com.roblox.client3",
     "4.apk": "com.roblox.client4",
-    "5.apk": "com.roblox.client5",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["config-change.json", "Rejoin.py", "Cookie.txt"]
 AUTOEXEC_FILES = ["con_cac_ba_may.luau", "check_info.luau"]
 
-MAX_DOWNLOAD_WORKERS = 13
+MAX_DOWNLOAD_WORKERS = 12
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
