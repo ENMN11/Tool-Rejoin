@@ -60,10 +60,11 @@ ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/aaa9e3ef-405a-41c0-8545-1876daa74909",
-    "1.apk": "https://cdn-01.anonfiles.ch/_static/962e9fb8-d869-41cf-b8fc-f892cfc78fd3",
-    "2.apk": "https://cdn-01.anonfiles.ch/_static/e545932b-3c2f-41a7-b8e3-f1bfeb224f6e",
-    "3.apk": "https://cdn-01.anonfiles.ch/_static/140d881b-7c1e-43cf-ab1e-9914a21dfcea",
-    "4.apk": "https://cdn-01.anonfiles.ch/_static/7451be16-289b-4d5b-8d5a-90849a77001e",
+    "1.apk": "https://cdn-01.anonfiles.ch/_static/8120b3aa-efb1-442d-8167-84cf6bf556b1",
+    "2.apk": "https://cdn-01.anonfiles.ch/_static/017a0d68-f9d2-4e83-b9d9-c25321a6f6a0",
+    "3.apk": "https://cdn-01.anonfiles.ch/_static/40aad0b4-42f0-4742-95f7-01dbc8c10f0a",
+    "4.apk": "https://cdn-01.anonfiles.ch/_static/503b55d4-f863-45dc-af48-2587094784a0",
+    "5.apk": "https://cdn-01.anonfiles.ch/_static/e3916f15-5b87-4b1e-a553-4a4e78da6ffa",
     "Via.apk": "https://cdn-01.anonfiles.ch/_static/f9f5ddc1-fb31-4b80-9b4a-80630af18619",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json",
@@ -80,6 +81,7 @@ APKS = {
     "2.apk": "com.roblox.client2",
     "3.apk": "com.roblox.client3",
     "4.apk": "com.roblox.client4",
+    "5.apk": "com.roblox.client5",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
