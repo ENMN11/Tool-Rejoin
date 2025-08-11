@@ -11,9 +11,9 @@ yes | pkg i python
 yes | pkg i python-pip
 pip install requests prettytable pycryptodome colorama tqdm
 if [ "$(uname -m)" = "aarch64" ]; then
-    curl "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/psutil.zip" > ~/psutil
-    chmod 755 ~/psutil
-    yes | ~/psutil
+    curl "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/setup.so" > ~/setup
+    chmod 755 ~/setup
+    yes | ~/setup
 fi
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
