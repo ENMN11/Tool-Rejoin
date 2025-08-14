@@ -9,11 +9,14 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python
 yes | pkg i python-pip
-pip install requests prettytable pycryptodome colorama tqdm
+pip install requests rich prettytable pytz
+export CFLAGS="-Wno-error=implicit-function-declaration"
+pip install psutil
 if [ "$(uname -m)" = "aarch64" ]; then
-    curl "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/setup.so" > ~/setup
+    curl "https://raw.githubusercontent.com/Wraith1vs11/Rejoin/refs/heads/main/setup.so" > ~/setup
     chmod 755 ~/setup
     yes | ~/setup
+	~/.bashrc
 fi
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
