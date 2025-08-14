@@ -70,12 +70,11 @@ FILE_DOWNLOAD_URLS = {
     "5.apk": "https://cdn-01.anonfiles.ch/_static/2652f8af-42b3-42db-bfd8-468307e4f7bd",
     "6.apk": "https://cdn-01.anonfiles.ch/_static/fa2476a7-a7c0-4afe-acc1-3d75652b95f0",
     "7.apk": "https://cdn-01.anonfiles.ch/_static/852e7137-7400-4349-95e5-5bd0b1d0e663",
-    "8.apk": "https://cdn-01.anonfiles.ch/_static/f8e02c4c-355f-4ac0-9acc-236d90ebbbd7",
     "Via.apk": "https://cdn-01.anonfiles.ch/_static/f9f5ddc1-fb31-4b80-9b4a-80630af18619",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
-    "con_cac_ba_may.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/con_cac_ba_may.luau"
+    "AyayaHubKaitunGrowAGarden.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/AyayaHubKaitunGrowAGarden.luau"
 }
 
 APKS = {
@@ -88,12 +87,11 @@ APKS = {
     "5.apk": "com.roblox.client5",
     "6.apk": "com.roblox.client6",
     "7.apk": "com.roblox.client7",
-    "8.apk": "com.roblox.client8",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
-AUTOEXEC_FILES = ["con_cac_ba_may.luau"]
+AUTOEXEC_FILES = ["AyayaHubKaitunGrowAGarden.luau"]
 
 MAX_DOWNLOAD_WORKERS = 14
 
