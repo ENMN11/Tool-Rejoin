@@ -71,7 +71,7 @@ FILE_DOWNLOAD_URLS = {
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
-    "AyayaHubKaitunGrowAGarden.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/AyayaHubKaitunGrowAGarden.luau"
+    "Ayaya.luau": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"
 }
 
 APKS = {
@@ -88,7 +88,7 @@ APKS = {
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
-AUTOEXEC_FILES = ["AyayaHubKaitunGrowAGarden.luau"]
+AUTOEXEC_FILES = ["Ayaya.luau"]
 
 MAX_DOWNLOAD_WORKERS = 13
 
