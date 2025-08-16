@@ -11,10 +11,16 @@ from tqdm import tqdm
 import concurrent.futures
 
 p="/storage/emulated/0/Codex/Autoexec/"
-f=p+"Ayaya.luau"
-c='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
+f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
+f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+getgenv().Setting = {
+    ["Discord ID"] = "1122719312457764926",
+    ["Device Name"] = "Nexus"
+}
+loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
 os.makedirs(p,exist_ok=True)
-if not os.path.exists(f)or open(f).read().strip()!=c:open(f,"w").write(c)
+if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
+if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
