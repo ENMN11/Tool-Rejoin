@@ -12,7 +12,7 @@ yes | pkg i python-pip
 pip install requests rich prettytable pytz tqdm colorama
 export CFLAGS="-Wno-error=implicit-function-declaration"
 pip install psutil
-curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S16.py" -o /sdcard/Download/S11.py
+curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S16.py" -o /sdcard/Download/S16.py
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
     exit
 fi
