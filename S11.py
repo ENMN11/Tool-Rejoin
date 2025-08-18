@@ -242,7 +242,7 @@ def get_requests_session():
 def download_file_task(file_name, url, destination_path, pbar_main):
     session = get_requests_session()
     try:
-        block_size = 1048576
+        block_size = 25000000
         response = session.get(url, stream=True, verify=False, timeout=120)
         response.raise_for_status()
         with open(destination_path, 'wb') as f:
