@@ -183,13 +183,13 @@ def writeserver():
 
     content = (
         "com.roblox.client1,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
-        "com.roblox.client2,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client3,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
-        "com.roblox.client4,https://www.roblox.com/share?code=ab6ed625785c5446a1917409755ecb8c&type=Server\n"
-        "com.roblox.client5,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server\n"
+        "com.roblox.client2,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
+        "com.roblox.client3,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
+        "com.roblox.client4,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
+        "com.roblox.client5,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
         "com.roblox.client6,roblox://placeID=126884695634066\n"
-        "com.roblox.client7,https://www.roblox.com/share?code=978d78e24413cb49b6672c652903f1ff&type=Server\n"
-        "com.roblox.client8,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server"
+        "com.roblox.client7,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
+        "com.roblox.client8,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server"
     )
 
     if os.path.exists(file_path):
