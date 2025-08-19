@@ -68,13 +68,13 @@ ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/aaa9e3ef-405a-41c0-8545-1876daa74909",
-    "1.apk": "https://cdn-01.anonfiles.ch/_static/f449526c-c262-45b8-bffd-5b35ab06448f",
-    "2.apk": "https://cdn-01.anonfiles.ch/_static/e63f6f8e-5dca-4f1e-ba49-f00e9b59a10c",
-    "3.apk": "https://cdn-01.anonfiles.ch/_static/7ae70b5f-cd34-4f52-a581-5436bb26b44a",
-    "4.apk": "https://cdn-01.anonfiles.ch/_static/a8966718-8cef-4740-885c-22a754370a9f",
-    "5.apk": "https://cdn-01.anonfiles.ch/_static/ff4558d4-1077-406e-b18e-ec193446ddaa",
-    "6.apk": "https://cdn-01.anonfiles.ch/_static/2051c614-43c6-4d9f-bdce-6c8be6e5ffbe",
-    "7.apk": "https://cdn-01.anonfiles.ch/_static/4a954253-7c4e-49df-87bc-2d32629f30ff",
+    "1.apk": "https://cdn-01.anonfiles.ch/_static/409b77d2-b3ab-45a0-bf6b-df19ca684506",
+    "2.apk": "https://cdn-01.anonfiles.ch/_static/f671057d-4a17-4a9c-afca-44c328d45b38",
+    "3.apk": "https://cdn-01.anonfiles.ch/_static/664eba7e-906d-4e0d-ab0e-2f9c8c74750f",
+    "4.apk": "https://cdn-01.anonfiles.ch/_static/c7e62305-921b-4601-b97c-0dcab264cba9",
+    "5.apk": "https://cdn-01.anonfiles.ch/_static/a55ab351-ccc7-4c5f-9c8d-1479a7184079",
+    "6.apk": "https://cdn-01.anonfiles.ch/_static/eff93dc0-e302-4816-8b98-11279f3ec59e",
+    "7.apk": "https://cdn-01.anonfiles.ch/_static/439d33c2-1fc9-449e-b07c-1abf3ce81d6a",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
