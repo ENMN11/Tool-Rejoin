@@ -186,15 +186,15 @@ def writeserver():
     file_path = os.path.join(shouko_path, "server_links.txt")
 
     content = (
-        "com.roblox.client1,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client2,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client3,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client4,https://www.roblox.com/share?code=7fc86578ca56de44964462f1289a4083&type=Server\n"
-        "com.roblox.client5,https://www.roblox.com/share?code=7fc86578ca56de44964462f1289a4083&type=Server\n"
-        "com.roblox.client6,https://www.roblox.com/share?code=7fc86578ca56de44964462f1289a4083&type=Server\n"
-        "com.roblox.client7,https://www.roblox.com/share?code=7fc86578ca56de44964462f1289a4083&type=Server\n"
-        "com.roblox.client8,https://www.roblox.com/share?code=7fc86578ca56de44964462f1289a4083&type=Server\n"
-        "com.roblox.client9,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
+        "com.roblox.client1,roblox://placeID=126884695634066\n"
+        "com.roblox.client2,roblox://placeID=126884695634066\n"
+        "com.roblox.client3,roblox://placeID=126884695634066\n"
+        "com.roblox.client4,roblox://placeID=126884695634066\n"
+        "com.roblox.client5,roblox://placeID=126884695634066\n"
+        "com.roblox.client6,roblox://placeID=126884695634066\n"
+        "com.roblox.client7,roblox://placeID=126884695634066\n"
+        "com.roblox.client8,roblox://placeID=126884695634066\n"
+        "com.roblox.client9,roblox://placeID=126884695634066\n"
         "com.roblox.client10,roblox://placeID=126884695634066"
     )
     
