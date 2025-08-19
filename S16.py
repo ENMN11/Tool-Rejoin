@@ -188,7 +188,8 @@ def writeserver():
         "com.roblox.client4,https://www.roblox.com/share?code=d9f3aae19b22754a90e5dda19fd63539&type=Server\n"
         "com.roblox.client5,https://www.roblox.com/share?code=864ac0712f43c84faefb4c7e3758e541&type=Server\n"
         "com.roblox.client6,https://www.roblox.com/share?code=b5f9d290dbed684b86ac13c8f076600d&type=Server\n"
-        "com.roblox.client7,https://www.roblox.com/share?code=28e929210b053c4c988a9068048563ac&type=Server"
+        "com.roblox.client7,https://www.roblox.com/share?code=28e929210b053c4c988a9068048563ac&type=Server\n"
+        "com.roblox.client8,https://www.roblox.com/share?code=ae665bda4c73774e86253f6a8c01241e&type=Server"
     )
     
     if os.path.exists(file_path):
