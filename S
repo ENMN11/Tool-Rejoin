@@ -9,7 +9,7 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python
 yes | pkg i python-pip
-pip install requests rich prettytable pytz pycryptodome colorama tqdm
+pip install requests prettytable pycryptodome
 export CFLAGS="-Wno-error=implicit-function-declaration"
 pip install psutil
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
