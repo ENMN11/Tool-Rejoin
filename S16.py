@@ -10,7 +10,7 @@ from colorama import init, Fore
 from tqdm import tqdm
 import concurrent.futures
 
-p="/storage/emulated/0/Codex/Autoexec/"
+p="/storage/emulated/0/Delta/Autoexecute/"
 f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
 f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 _G.Config = { UserID = "23bd740b-d966-4d71-9b91-6dc9806d07fd", discord_id = "1026799803155361832", Note = "Pc" }
