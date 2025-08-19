@@ -12,12 +12,14 @@ import concurrent.futures
 
 p="/storage/emulated/0/Delta/Autoexecute/"
 f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
-f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+f2=p+"Yummy-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 _G.Config = { UserID = "23bd740b-d966-4d71-9b91-6dc9806d07fd", discord_id = "1026799803155361832", Note = "Pc" }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/gag"))()'''
+f3=p+"LockFPS.luau";c3='setfpscap(2)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
+if not os.path.exists(f3)or open(f3).read().strip()!=c3:open(f3,"w").write(c3)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
