@@ -122,7 +122,7 @@ def disable_bloatware_apps():
     print(Fore.LIGHTBLUE_EX + "Đang vô hiệu hóa các ứng dụng không cần thiết...")
     apps_to_disable = [ 
         "com.wsh.toolkit", "com.wsh.appstorage", "com.wsh.launcher2", "com.android.calculator2", "com.android.music", "com.android.musicfx", "com.sohu.inputmethod.sogou", "net.sourceforge.opencamera", "com.google.android.googlequicksearchbox", "com.google.android.gms",
-        "com.android.chrome", "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs",
+        "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs",
         "com.google.android.apps.meetings", "com.google.android.apps.maps", "com.google.android.apps.photos",
         "com.google.android.contacts", "com.google.android.calendar", "com.android.vending", "com.google.ar.core",
         "com.google.android.play.games", "com.google.android.apps.magazines", "com.google.android.apps.subscriptions.red",
@@ -145,7 +145,7 @@ def disable_bloatware_apps():
         "com.google.android.apps.messaging", "com.google.android.dialer", "com.android.mms", "com.android.messaging",
         "com.android.dialer", "com.android.contacts", "com.samsung.android.messaging", "com.android.mms.service",
         "com.miui.smsservice", "com.coloros.mms", "com.vivo.message", "com.huawei.message",
-        "com.lge.message", "com.android.chrome", "com.sonyericsson.conversations", "com.motorola.messaging",
+        "com.lge.message", "com.sonyericsson.conversations", "com.motorola.messaging",
         "com.transsion.message", "com.android.cellbroadcastreceiver", "com.android.cellbroadcastservice"
     ]
     for package_name in apps_to_disable:
