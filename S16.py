@@ -78,6 +78,7 @@ FILE_DOWNLOAD_URLS = {
     "6.apk": "https://cdn-01.anonfiles.ch/_static/eff93dc0-e302-4816-8b98-11279f3ec59e",
     "7.apk": "https://cdn-01.anonfiles.ch/_static/439d33c2-1fc9-449e-b07c-1abf3ce81d6a",
     "8.apk": "https://cdn-01.anonfiles.ch/_static/331ac24a-5408-42c5-b7cc-bbf03648a379",
+    "9.apk": "https://cdn-01.anonfiles.ch/_static/4568fd6b-66e6-4c04-950f-4150d040f956",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/UGPhone/refs/heads/main/Cookie.txt"
@@ -93,12 +94,13 @@ APKS = {
     "6.apk": "com.roblox.client6",
     "7.apk": "com.roblox.client7",
     "8.apk": "com.roblox.client8",
+    "9.apk": "com.roblox.client9",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
 
-MAX_DOWNLOAD_WORKERS = 12
+MAX_DOWNLOAD_WORKERS = 13
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
@@ -187,11 +189,12 @@ def writeserver():
         "com.roblox.client1,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
         "com.roblox.client2,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
         "com.roblox.client3,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
-        "com.roblox.client4,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
-        "com.roblox.client5,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
-        "com.roblox.client6,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
+        "com.roblox.client4,https://www.roblox.com/share?code=ab6ed625785c5446a1917409755ecb8c&type=Server\n"
+        "com.roblox.client5,https://www.roblox.com/share?code=ab6ed625785c5446a1917409755ecb8c&type=Server\n"
+        "com.roblox.client6,https://www.roblox.com/share?code=ab6ed625785c5446a1917409755ecb8c&type=Server\n"
         "com.roblox.client7,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
-        "com.roblox.client8,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server"
+        "com.roblox.client8,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
+        "com.roblox.client9,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server"
     )
     
     if os.path.exists(file_path):
