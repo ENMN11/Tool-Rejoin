@@ -15,7 +15,7 @@ f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com
 f2=p+"Yummy-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 _G.Config = { UserID = "23bd740b-d966-4d71-9b91-6dc9806d07fd", discord_id = "1026799803155361832", Note = "Pc" }
 loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/gag"))()'''
-f3=p+"LockFPS.luau";c3='setfpscap(1)'
+f3=p+"LockFPS.luau";c3='setfpscap(2)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
@@ -78,8 +78,6 @@ FILE_DOWNLOAD_URLS = {
     "6.apk": "https://cdn-01.anonfiles.ch/_static/eff93dc0-e302-4816-8b98-11279f3ec59e",
     "7.apk": "https://cdn-01.anonfiles.ch/_static/439d33c2-1fc9-449e-b07c-1abf3ce81d6a",
     "8.apk": "https://cdn-01.anonfiles.ch/_static/331ac24a-5408-42c5-b7cc-bbf03648a379",
-    "9.apk": "https://cdn-01.anonfiles.ch/_static/4568fd6b-66e6-4c04-950f-4150d040f956",
-    "10.apk": "https://cdn-01.anonfiles.ch/_static/90b82738-f1f2-4da8-8284-9f4e4e1035c1",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/UGPhone/refs/heads/main/Cookie.txt"
@@ -95,14 +93,12 @@ APKS = {
     "6.apk": "com.roblox.client6",
     "7.apk": "com.roblox.client7",
     "8.apk": "com.roblox.client8",
-    "9.apk": "com.roblox.client9",
-    "10.apk": "com.roblox.client10",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
 
-MAX_DOWNLOAD_WORKERS = 14
+MAX_DOWNLOAD_WORKERS = 12
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
@@ -192,12 +188,10 @@ def writeserver():
         "com.roblox.client2,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
         "com.roblox.client3,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
         "com.roblox.client4,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
-        "com.roblox.client5,https://www.roblox.com/share?code=3224715764cc924d91af471cf7cc56f8&type=Server\n"
-        "com.roblox.client6,roblox://placeID=126884695634066\n"
-        "com.roblox.client7,roblox://placeID=126884695634066\n"
-        "com.roblox.client8,roblox://placeID=126884695634066\n"
-        "com.roblox.client9,roblox://placeID=126884695634066\n"
-        "com.roblox.client10,roblox://placeID=126884695634066"
+        "com.roblox.client5,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
+        "com.roblox.client6,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
+        "com.roblox.client7,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server\n"
+        "com.roblox.client8,https://www.roblox.com/share?code=341464336460b54e837990c67439c687&type=Server"
     )
     
     if os.path.exists(file_path):
