@@ -189,11 +189,11 @@ def writeserver():
         "com.roblox.client1,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
         "com.roblox.client2,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
         "com.roblox.client3,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
-        "com.roblox.client4,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
+        "com.roblox.client4,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
         "com.roblox.client5,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
         "com.roblox.client6,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client7,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client8,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
+        "com.roblox.client7,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server\n"
+        "com.roblox.client8,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server\n"
         "com.roblox.client9,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server"
     )
     
