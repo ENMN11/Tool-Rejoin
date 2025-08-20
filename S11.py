@@ -78,8 +78,6 @@ FILE_DOWNLOAD_URLS = {
     "6.apk": "https://cdn-01.anonfiles.ch/_static/eff93dc0-e302-4816-8b98-11279f3ec59e",
     "7.apk": "https://cdn-01.anonfiles.ch/_static/439d33c2-1fc9-449e-b07c-1abf3ce81d6a",
     "8.apk": "https://cdn-01.anonfiles.ch/_static/331ac24a-5408-42c5-b7cc-bbf03648a379",
-    "9.apk": "https://cdn-01.anonfiles.ch/_static/4568fd6b-66e6-4c04-950f-4150d040f956",
-    "10.apk": "https://cdn-01.anonfiles.ch/_static/90b82738-f1f2-4da8-8284-9f4e4e1035c1",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
@@ -95,8 +93,6 @@ APKS = {
     "6.apk": "com.roblox.client6",
     "7.apk": "com.roblox.client7",
     "8.apk": "com.roblox.client8",
-    "9.apk": "com.roblox.client9",
-    "10.apk": "com.roblox.client10",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
