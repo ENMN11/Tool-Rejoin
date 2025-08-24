@@ -180,8 +180,6 @@ def disable_animations():
     return success
 
 def writeserver():
-    import os
-    
     base_path = "/storage/emulated/0/Download"
     shouko_path = os.path.join(base_path, "Shouko")
     os.makedirs(shouko_path, exist_ok=True)
