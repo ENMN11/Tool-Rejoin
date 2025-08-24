@@ -180,21 +180,23 @@ def disable_animations():
     return success
 
 def writeserver():
+    import os
+    
     base_path = "/storage/emulated/0/Download"
     shouko_path = os.path.join(base_path, "Shouko")
     os.makedirs(shouko_path, exist_ok=True)
     file_path = os.path.join(shouko_path, "server_links.txt")
 
     content = (
-        "com.roblox.client1,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
-        "com.roblox.client2,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
-        "com.roblox.client3,https://www.roblox.com/share?code=095a573c5a995c4d938b226498633d28&type=Server\n"
-        "com.roblox.client4,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client5,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client6,https://www.roblox.com/share?code=c6c1106866836046803b265de59f7eef&type=Server\n"
-        "com.roblox.client7,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server\n"
-        "com.roblox.client8,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server\n"
-        "com.roblox.client9,https://www.roblox.com/share?code=2a6429c0a9b3434f9c704165c699cfc5&type=Server"
+        "com.roblox.client1,roblox://placeID=126884695634066\n"
+        "com.roblox.client2,roblox://placeID=126884695634066\n"
+        "com.roblox.client3,roblox://placeID=126884695634066\n"
+        "com.roblox.client4,roblox://placeID=126884695634066\n"
+        "com.roblox.client5,roblox://placeID=126884695634066\n"
+        "com.roblox.client6,roblox://placeID=126884695634066\n"
+        "com.roblox.client7,roblox://placeID=126884695634066\n"
+        "com.roblox.client8,roblox://placeID=126884695634066\n"
+        "com.roblox.client9,roblox://placeID=126884695634066"
     )
     
     if os.path.exists(file_path):
