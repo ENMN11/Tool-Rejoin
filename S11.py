@@ -81,8 +81,7 @@ FILE_DOWNLOAD_URLS = {
     "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
     "6.apk": "https://cdn-01.anonfiles.ch/_static/169b973d-30cb-443f-a15f-53aa76e6740c",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
-    "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
-    "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
+    "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py"
 }
 
 APKS = {
