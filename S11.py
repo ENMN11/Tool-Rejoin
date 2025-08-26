@@ -13,9 +13,13 @@ import concurrent.futures
 p="/storage/emulated/0/Delta/Autoexecute/"
 f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
 f2=p+"Yummy-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-_G.Config = { UserID = "23bd740b-d966-4d71-9b91-6dc9806d07fd", discord_id = "1026799803155361832", Note = "Pc" }
-loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/refs/heads/main/gag"))()'''
-f3=p+"LockFPS.luau";c3='setfpscap(3)'
+getgenv().Setting =  {
+    ["UUID"] = "f993c96d-768b-410c-aa8e-ee284af5f6c0", -- #bot-commands | use /get-uuid
+    ["Discord ID"] = "1122719312457764926",
+    ["Device Name"] = "Nexus" -- note | can change it to anything u want!!
+}
+loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
+f3=p+"LockFPS.luau";c3='setfpscap(10)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
@@ -70,15 +74,12 @@ ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/aaa9e3ef-405a-41c0-8545-1876daa74909",
-    "1.apk": "https://cdn-01.anonfiles.ch/_static/ab7ae4d1-0b84-4643-a8c0-b91caeb61681",
-    "2.apk": "https://cdn-01.anonfiles.ch/_static/869e327a-8e23-47b8-9d33-c1e75ec5e989",
-    "3.apk": "https://cdn-01.anonfiles.ch/_static/2a5130fe-2fcc-4b49-8084-cb09f29b6eb9",
-    "4.apk": "https://cdn-01.anonfiles.ch/_static/30c4a21e-1577-4f49-8662-b9daa36424c6",
-    "5.apk": "https://cdn-01.anonfiles.ch/_static/714bdf39-2a99-4270-920d-e37679d36f4c",
-    "6.apk": "https://cdn-01.anonfiles.ch/_static/6d4f9906-51a3-45d4-867c-53fa405cb576",
-    "7.apk": "https://cdn-01.anonfiles.ch/_static/63243c45-fc04-4c73-8687-33e3151e33d6",
-    "8.apk": "https://cdn-01.anonfiles.ch/_static/a0a9940c-1fa3-45f7-8b22-5dec90a6a564",
-    "9.apk": "https://cdn-01.anonfiles.ch/_static/5bb6a9cf-ddb7-497e-9a7d-b92ad521a3ee",
+    "1.apk": "https://cdn-01.anonfiles.ch/_static/0dc3db2a-f014-470e-8d28-86583ed1ac8b",
+    "2.apk": "https://cdn-01.anonfiles.ch/_static/60a2ee99-dbf0-4dee-aa1c-e2d9f7eabec0",
+    "3.apk": "https://cdn-01.anonfiles.ch/_static/838401a3-e95f-4f7b-b944-050740278fa4",
+    "4.apk": "https://cdn-01.anonfiles.ch/_static/d4119ac8-d1ac-4e1d-8c3b-a263457aebea",
+    "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
+    "6.apk": "https://cdn-01.anonfiles.ch/_static/169b973d-30cb-443f-a15f-53aa76e6740c",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
@@ -92,15 +93,12 @@ APKS = {
     "4.apk": "com.roblox.client4",
     "5.apk": "com.roblox.client5",
     "6.apk": "com.roblox.client6",
-    "7.apk": "com.roblox.client7",
-    "8.apk": "com.roblox.client8",
-    "9.apk": "com.roblox.client9",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
 
-MAX_DOWNLOAD_WORKERS = 13
+MAX_DOWNLOAD_WORKERS = 10
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
