@@ -12,22 +12,13 @@ import concurrent.futures
 
 p="/storage/emulated/0/Trigon/Autoexec/"
 f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
-f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
-    ['key'] = '9d6ca419-5148-4b0b-905e-2eb250c480af',
-    ['PC'] = 'Nexus',
-    ['webhooks'] = {
-        ['fullmoon'] = '',
-        ['mirage'] = '',
-    },
-    ['Sword'] = {'Cursed Dual Katana', 'Shark Anchor', 'Tushita', 'Yama', 'Dark Dagger', 'Hallow Scythe', 'Saber'},
-    ['Gun'] = {'Soul Guitar', 'Serpent Bow', 'Kabucha', 'Acidum Rifle'},
-    ['Accessories'] = {'Dark Coat', 'Leviathan Shield', 'Leviathan Crown', 'Pale Scarf', 'Kitsune Mask', 'Kitsune Ribbon'},
-    ['Fruit'] = {
-        'Kitsune', 'Leopard', 'Dragon (West)', 'Spirit', 'Control', 'Venom', 'Gas', 'Yeti',
-        'Shadow', 'Dough', 'Mammoth', 'T-Rex', 'Dragon (East)'
-    }
+f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+getgenv().Setting =  {
+    ["UUID"] = "f993c96d-768b-410c-aa8e-ee284af5f6c0", 
+    ["Discord ID"] = "1122719312457764926",
+    ["Device Name"] = "Nexus"
 }
-task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/main.lua'))() end)'''
+loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
 f3=p+"LockFPS.luau";c3='setfpscap(10)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
@@ -88,7 +79,6 @@ FILE_DOWNLOAD_URLS = {
     "3.apk": "https://cdn-01.anonfiles.ch/_static/838401a3-e95f-4f7b-b944-050740278fa4",
     "4.apk": "https://cdn-01.anonfiles.ch/_static/d4119ac8-d1ac-4e1d-8c3b-a263457aebea",
     "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
-    "6.apk": "https://cdn-01.anonfiles.ch/_static/169b973d-30cb-443f-a15f-53aa76e6740c",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py"
 }
@@ -100,13 +90,12 @@ APKS = {
     "3.apk": "com.roblox.client3",
     "4.apk": "com.roblox.client4",
     "5.apk": "com.roblox.client5",
-    "6.apk": "com.roblox.client6",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
 
-MAX_DOWNLOAD_WORKERS = 10
+MAX_DOWNLOAD_WORKERS = 8
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
