@@ -128,7 +128,7 @@ def disable_bloatware_apps():
     print(Fore.LIGHTBLUE_EX + "Đang vô hiệu hóa các ứng dụng không cần thiết...")
     apps_to_disable = [ 
         "com.wsh.toolkit", "com.wsh.appstorage", "com.wsh.launcher2", "com.android.calculator2", "com.android.music", "com.android.musicfx", "com.sohu.inputmethod.sogou", "net.sourceforge.opencamera", "com.google.android.googlequicksearchbox", "com.google.android.gms",
-        "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs",
+        "com.google.android.gm", "com.google.android.youtube", "com.google.android.apps.docs", "com.android.chrome",
         "com.google.android.apps.meetings", "com.google.android.apps.maps", "com.google.android.apps.photos",
         "com.google.android.contacts", "com.google.android.calendar", "com.android.vending", "com.google.ar.core",
         "com.google.android.play.games", "com.google.android.apps.magazines", "com.google.android.apps.subscriptions.red",
