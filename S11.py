@@ -12,13 +12,22 @@ import concurrent.futures
 
 p="/storage/emulated/0/Trigon/Autoexec/"
 f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
-f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-getgenv().Setting =  {
-    ["UUID"] = "f993c96d-768b-410c-aa8e-ee284af5f6c0", -- #bot-commands | use /get-uuid
-    ["Discord ID"] = "1122719312457764926",
-    ["Device Name"] = "Nexus" -- note | can change it to anything u want!!
+f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
+    ['key'] = '9d6ca419-5148-4b0b-905e-2eb250c480af',
+    ['PC'] = 'Nexus',
+    ['webhooks'] = {
+        ['fullmoon'] = '',
+        ['mirage'] = '',
+    },
+    ['Sword'] = {'Cursed Dual Katana', 'Shark Anchor', 'Tushita', 'Yama', 'Dark Dagger', 'Hallow Scythe', 'Saber'},
+    ['Gun'] = {'Soul Guitar', 'Serpent Bow', 'Kabucha', 'Acidum Rifle'},
+    ['Accessories'] = {'Dark Coat', 'Leviathan Shield', 'Leviathan Crown', 'Pale Scarf', 'Kitsune Mask', 'Kitsune Ribbon'},
+    ['Fruit'] = {
+        'Kitsune', 'Leopard', 'Dragon (West)', 'Spirit', 'Control', 'Venom', 'Gas', 'Yeti',
+        'Shadow', 'Dough', 'Mammoth', 'T-Rex', 'Dragon (East)'
+    }
 }
-loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
+task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/main.lua'))() end)'''
 f3=p+"LockFPS.luau";c3='setfpscap(10)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
