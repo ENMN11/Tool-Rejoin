@@ -10,8 +10,8 @@ from colorama import init, Fore
 from tqdm import tqdm
 import concurrent.futures
 
-p="/storage/emulated/0/Delta/Autoexecute/"
-f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Ayaya.luau"))()'
+p="/storage/emulated/0/Trigon/Autoexec/"
+f1=p+"Ayaya.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
 f2=p+"Yummy-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 getgenv().Setting =  {
     ["UUID"] = "f993c96d-768b-410c-aa8e-ee284af5f6c0", -- #bot-commands | use /get-uuid
