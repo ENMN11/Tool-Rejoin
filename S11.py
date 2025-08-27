@@ -95,7 +95,7 @@ APKS = {
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt", "config-change.json"]
 
-MAX_DOWNLOAD_WORKERS = 9
+MAX_DOWNLOAD_WORKERS = 10
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
