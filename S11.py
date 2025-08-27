@@ -79,7 +79,8 @@ FILE_DOWNLOAD_URLS = {
     "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
-    "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
+    "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
+    "config-change.json": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json"
 }
 
 APKS = {
@@ -92,7 +93,7 @@ APKS = {
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
-EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
+EXTRA_FILES = ["Rejoin.py", "Cookie.txt", "config-change.json"]
 
 MAX_DOWNLOAD_WORKERS = 9
 
