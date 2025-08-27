@@ -19,11 +19,9 @@ getgenv().Setting =  {
     ["Device Name"] = "Nexus"
 }
 loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
-f3=p+"LockFPS.luau";c3='setfpscap(10)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
-if not os.path.exists(f3)or open(f3).read().strip()!=c3:open(f3,"w").write(c3)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -80,7 +78,8 @@ FILE_DOWNLOAD_URLS = {
     "4.apk": "https://cdn-01.anonfiles.ch/_static/d4119ac8-d1ac-4e1d-8c3b-a263457aebea",
     "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
-    "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py"
+    "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
+    "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt"
 }
 
 APKS = {
@@ -95,7 +94,7 @@ APKS = {
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt"]
 
-MAX_DOWNLOAD_WORKERS = 8
+MAX_DOWNLOAD_WORKERS = 9
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
