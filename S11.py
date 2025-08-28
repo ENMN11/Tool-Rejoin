@@ -11,17 +11,27 @@ from tqdm import tqdm
 import concurrent.futures
 
 p="/storage/emulated/0/Trigon/Autoexec/"
-f1=p+"Maru.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
-f2=p+"Shouko-Trackstat.luau";c2='''repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-getgenv().Setting =  {
-    ["UUID"] = "f993c96d-768b-410c-aa8e-ee284af5f6c0", 
-    ["Discord ID"] = "1122719312457764926",
-    ["Device Name"] = "Nexus"
+f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
+f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
+    ["key"] = "9d6ca419-5148-4b0b-905e-2eb250c480af",
+    ["PC"] = "Nexus",
+    ["webhooks"] = {
+        ["fullmoon"] = "",
+        ["mirage"] = ""
+    },
+    ["Sword"] = {"Cutlass", "Dual Katana", "Katana", "Iron Mace", "Shark Saw", "Triple Katana", "Twin Hooks", "Dragon Trident", "Dual-Headed Blade", "Flail", "Gravity Blade", "Longsword", "Pipe", "Soul Cane", "Trident", "Warden’s Sword", "Bisento", "Buddy Sword", "Canvander", "Dark Dagger", "Dragonheart", "Fox Lamp", "Koko", "Midnight Blade", "Oroshi", "Pole (1st Form)", "Pole (2nd Form)", "Rengoku", "Saber", "Saishi", "Shark Anchor", "Shark Saw", "Shizu", "Shotgun", "Skull Guitar", "Slingshot", "Spikey Trident", "Triple Dark Blade", "True Triple Katana", "Tushita", "Twin Hooks", "Yama"},
+    ["Gun"] = {"Slingshot", "Flintlock", "Musket", "Acidum Rifle", "Bizarre Revolver", "Cannon", "Dual Flintlock", "Magma Blaster", "Refined Slingshot", "Refined Flintlock", "Refined Musket", "Bazooka", "Dragonstorm", "Serpent Bow", "Shotgun", "Skull Guitar", "Venom Bow", "Bizarre Rifle"},
+    ["Accessories"] = {"Dark Coat", "Leviathan Shield", "Leviathan Crown", "Pale Scarf", "Kitsune Mask", "Kitsune Ribbon"},
+    ["Fruit"] = {"Rocket", "Kilo", "Spin", "Chop", "Spring", "Bomb", "Smoke", "Spike", "Flame", "Falcon", "Ice", "Sand", "Dark", "Revive", "Diamond", "Light", "Rubber", "Barrier", "Magma", "Quake", "Buddha", "Love", "Creation", "Spider", "Sound", "Phoenix", "Portal", "Lightning", "Pain", "Blizzard", "Gravity", "Mammoth", "T-Rex", "Dough", "Shadow", "Venom", "Control", "Gas", "Spirit", "Leopard", "Yeti", "Kitsune", "Dragon (East)", "Dragon (West)"}
 }
-loadstring(game:HttpGet("https://cdn.shouko.dev/RokidManager/neyoshiiuem/main/trackstat.lua"))()'''
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/main.lua"))()
+end)'''
+f3=p+"LockFPS.luau";c3='setfpscap(15)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
+if not os.path.exists(f3)or open(f3).read().strip()!=c3:open(f3,"w").write(c3)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
