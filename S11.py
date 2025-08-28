@@ -10,7 +10,7 @@ from colorama import init, Fore
 from tqdm import tqdm
 import concurrent.futures
 
-p="/storage/emulated/0/Trigon/Autoexec/"
+p="/storage/emulated/0/Codex/Autoexec/"
 f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
 f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
     ["key"] = "9d6ca419-5148-4b0b-905e-2eb250c480af",
@@ -191,15 +191,10 @@ def writeserver():
     file_path = os.path.join(shouko_path, "server_links.txt")
 
     content = (
-        "com.roblox.client1,roblox://placeID=126884695634066\n"
-        "com.roblox.client2,roblox://placeID=126884695634066\n"
-        "com.roblox.client3,roblox://placeID=126884695634066\n"
-        "com.roblox.client4,roblox://placeID=126884695634066\n"
-        "com.roblox.client5,roblox://placeID=126884695634066\n"
-        "com.roblox.client6,roblox://placeID=126884695634066\n"
-        "com.roblox.client7,roblox://placeID=126884695634066\n"
-        "com.roblox.client8,roblox://placeID=126884695634066\n"
-        "com.roblox.client9,roblox://placeID=126884695634066"
+        "com.roblox.client1,roblox://placeID=2753915549\n"
+        "com.roblox.client2,roblox://placeID=2753915549\n"
+        "com.roblox.client3,roblox://placeID=2753915549\n"
+        "com.roblox.client4,roblox://placeID=2753915549"
     )
     
     if os.path.exists(file_path):
