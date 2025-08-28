@@ -82,10 +82,10 @@ ANDROID_ID = "b419fa14320149db"
 
 FILE_DOWNLOAD_URLS = {
     "MTManager.apk": "https://cdn-01.anonfiles.ch/_static/aaa9e3ef-405a-41c0-8545-1876daa74909",
-    "1.apk": "https://cdn-01.anonfiles.ch/_static/0dc3db2a-f014-470e-8d28-86583ed1ac8b",
-    "2.apk": "https://cdn-01.anonfiles.ch/_static/60a2ee99-dbf0-4dee-aa1c-e2d9f7eabec0",
-    "3.apk": "https://cdn-01.anonfiles.ch/_static/838401a3-e95f-4f7b-b944-050740278fa4",
-    "4.apk": "https://cdn-01.anonfiles.ch/_static/d4119ac8-d1ac-4e1d-8c3b-a263457aebea",
+    "1.apk": "https://cdn-01.anonfiles.ch/_static/2d4d871d-c2e9-4efb-8fd2-b99af56a3a9b",
+    "2.apk": "https://cdn-01.anonfiles.ch/_static/c2bdf510-3b2d-4d90-9549-751f1f647b99",
+    "3.apk": "https://cdn-01.anonfiles.ch/_static/f77556e3-a028-4216-8a4b-9e17e902c975",
+    "4.apk": "https://cdn-01.anonfiles.ch/_static/04a67b7f-4257-4654-8b07-fad9ba033eb9",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
