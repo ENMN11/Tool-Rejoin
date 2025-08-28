@@ -86,7 +86,6 @@ FILE_DOWNLOAD_URLS = {
     "2.apk": "https://cdn-01.anonfiles.ch/_static/60a2ee99-dbf0-4dee-aa1c-e2d9f7eabec0",
     "3.apk": "https://cdn-01.anonfiles.ch/_static/838401a3-e95f-4f7b-b944-050740278fa4",
     "4.apk": "https://cdn-01.anonfiles.ch/_static/d4119ac8-d1ac-4e1d-8c3b-a263457aebea",
-    "5.apk": "https://cdn-01.anonfiles.ch/_static/bd0cc251-b12a-4af1-a1b7-625ac647d71e",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
@@ -99,13 +98,12 @@ APKS = {
     "2.apk": "com.roblox.client2",
     "3.apk": "com.roblox.client3",
     "4.apk": "com.roblox.client4",
-    "5.apk": "com.roblox.client5",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt", "config-change.json"]
 
-MAX_DOWNLOAD_WORKERS = 10
+MAX_DOWNLOAD_WORKERS = 9
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
