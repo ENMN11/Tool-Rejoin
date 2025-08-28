@@ -27,11 +27,9 @@ f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
 task.spawn(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/main.lua"))()
 end)'''
-f3=p+"LockFPS.luau";c3='setfpscap(15)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
-if not os.path.exists(f3)or open(f3).read().strip()!=c3:open(f3,"w").write(c3)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
