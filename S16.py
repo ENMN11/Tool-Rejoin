@@ -10,8 +10,8 @@ from colorama import init, Fore
 from tqdm import tqdm
 import concurrent.futures
 
-p="/storage/emulated/0/Codex/Autoexec/"
-f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/BananaHubKaitunBF.luau"))()'
+p="/storage/emulated/0/Delta/Autoexecute/"
+f1=p+"Banana.luau";c1='loadstring(game:HttpGet("https://raw.githubusercontent.com/ENMN11/UGPhone/refs/heads/main/BananaHubKaitunBF.luau"))()'
 f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
     ["key"] = "9d6ca419-5148-4b0b-905e-2eb250c480af",
     ["PC"] = "Nexus",
