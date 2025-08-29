@@ -27,9 +27,11 @@ f2=p+"Hermanos-Trackstat.luau";c2='''getgenv().Hermanos_Settings = {
 task.spawn(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/main.lua"))()
 end)'''
+f3=p+"LockFPS.luau";c3='setfpscap(10)'
 os.makedirs(p,exist_ok=True)
 if not os.path.exists(f1)or open(f1).read().strip()!=c1:open(f1,"w").write(c1)
 if not os.path.exists(f2)or open(f2).read().strip()!=c2:open(f2,"w").write(c2)
+if not os.path.exists(f3)or open(f3).read().strip()!=c3:open(f3,"w").write(c3)
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -84,6 +86,8 @@ FILE_DOWNLOAD_URLS = {
     "2.apk": "https://cdn-01.anonfiles.ch/_static/c2bdf510-3b2d-4d90-9549-751f1f647b99",
     "3.apk": "https://cdn-01.anonfiles.ch/_static/f77556e3-a028-4216-8a4b-9e17e902c975",
     "4.apk": "https://cdn-01.anonfiles.ch/_static/04a67b7f-4257-4654-8b07-fad9ba033eb9",
+    "5.apk": "https://cdn-01.anonfiles.ch/_static/04a67b7f-4257-4654-8b07-fad9ba033eb9",
+    "6.apk": "https://cdn-01.anonfiles.ch/_static/04a67b7f-4257-4654-8b07-fad9ba033eb9",
     "Mini.apk": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Mini.apk",
     "Rejoin.py": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py",
     "Cookie.txt": "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt",
@@ -96,12 +100,14 @@ APKS = {
     "2.apk": "com.roblox.client2",
     "3.apk": "com.roblox.client3",
     "4.apk": "com.roblox.client4",
+    "5.apk": "com.roblox.client5",
+    "6.apk": "com.roblox.client6",
     "Mini.apk": "com.atomicadd.tinylauncher"
 }
 
 EXTRA_FILES = ["Rejoin.py", "Cookie.txt", "config-change.json"]
 
-MAX_DOWNLOAD_WORKERS = 9
+MAX_DOWNLOAD_WORKERS = 11
 
 def clear_screen():
     os.system("clear" if os.name != "nt" else "cls")
@@ -190,7 +196,9 @@ def writeserver():
         "com.roblox.client1,roblox://placeID=2753915549\n"
         "com.roblox.client2,roblox://placeID=2753915549\n"
         "com.roblox.client3,roblox://placeID=2753915549\n"
-        "com.roblox.client4,roblox://placeID=2753915549"
+        "com.roblox.client4,roblox://placeID=2753915549\n"
+        "com.roblox.client5,roblox://placeID=2753915549\n"
+        "com.roblox.client6,roblox://placeID=2753915549"
     )
     
     if os.path.exists(file_path):
