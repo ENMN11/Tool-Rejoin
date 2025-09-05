@@ -82,13 +82,15 @@ os.makedirs(shouko_path, exist_ok=True)
 file_path = os.path.join(shouko_path, "server_links.txt")
 
 content = (
-    "com.roblox.client1,roblox://placeID=126884695634066\n"
-    "com.roblox.client2,roblox://placeID=126884695634066\n"
-    "com.roblox.client3,roblox://placeID=126884695634066\n"
-    "com.roblox.client4,roblox://placeID=126884695634066\n"
-    "com.roblox.client5,roblox://placeID=126884695634066\n"
-    "com.roblox.client6,roblox://placeID=126884695634066\n"
-    "com.roblox.client7,roblox://placeID=126884695634066"
+    "com.roblox.client1,roblox://placeID=13379208636\n"
+    "com.roblox.client2,roblox://placeID=13379208636\n"
+    "com.roblox.client3,roblox://placeID=13379208636\n"
+    "com.roblox.client4,roblox://placeID=13379208636\n"
+    "com.roblox.client5,roblox://placeID=13379208636\n"
+    "com.roblox.client6,roblox://placeID=13379208636\n"
+    "com.roblox.client7,roblox://placeID=13379208636\n"
+    "com.roblox.client8,roblox://placeID=13379208636\n"
+    "com.roblox.client9,roblox://placeID=13379208636"
 )
 
 if os.path.exists(file_path):
