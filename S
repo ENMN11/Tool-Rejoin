@@ -12,6 +12,7 @@ yes | pkg i python-pip tsu libexpat git openssl lua53
 pip install aiofiles aiohttp aiosqlite crypto cython pycryptodome pyfiglet requests rich
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
 curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Reconnect.lua" -o /sdcard/Download/Reconnect.lua
+curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/Update.py" -o /sdcard/Download/Update.py
 curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/.reconnect.bin" -o /data/data/com.termux/files/home/.reconnect.bin
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
     exit
