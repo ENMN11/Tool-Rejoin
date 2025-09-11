@@ -78,32 +78,6 @@ lite_packages = [
     "com.sonyericsson.conversations","com.motorola.messaging","com.transsion.message"
 ]
 
-base_path = "/storage/emulated/0/Download"
-shouko_path = os.path.join(base_path, "Shouko")
-os.makedirs(shouko_path, exist_ok=True)
-file_path = os.path.join(shouko_path, "server_links.txt")
-
-content = (
-    "com.roblox.client1,roblox://placeID=13379208636\n"
-    "com.roblox.client2,roblox://placeID=13379208636\n"
-    "com.roblox.client3,roblox://placeID=13379208636\n"
-    "com.roblox.client4,roblox://placeID=13379208636\n"
-    "com.roblox.client5,roblox://placeID=13379208636\n"
-    "com.roblox.client6,roblox://placeID=13379208636\n"
-    "com.roblox.client7,roblox://placeID=13379208636\n"
-    "com.roblox.client8,roblox://placeID=13379208636\n"
-    "com.roblox.client9,roblox://placeID=13379208636"
-)
-
-if os.path.exists(file_path):
-    with open(file_path, "r", encoding="utf-8") as f:
-        if f.read() != content:
-            with open(file_path, "w", encoding="utf-8") as f2:
-                f2.write(content)
-else:
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(content)
-
 def run(cmd):
     subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
