@@ -8,14 +8,12 @@ yes | pkg update
 . <(curl https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/termux-change-repo.sh)
 yes | pkg upgrade
 yes | pkg i python
-yes | pkg i python-pip
-pip install requests prettytable pycryptodome colorama tqdm
-export CFLAGS="-Wno-error=implicit-function-declaration"
-pip install psutil
+yes | pkg i python-pip tsu libexpat git openssl lua53
+pip install aiofiles aiohttp aiosqlite crypto cython pycryptodome pyfiglet requests rich
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
-curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Cookie.txt" -o /sdcard/Download/Cookie.txt
-curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py" -o /sdcard/Download/Rejoin.py
+curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Reconnect.lua" -o /sdcard/Download/Reconnect.lua
+curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/.reconnect.bin" -o /data/data/com.termux/files/home/.reconnect.bin
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
     exit
 fi
-su -c "am kill-all" && su -c "settings put global heads_up_notifications_enabled 0; settings put secure lock_screen_show_notifications 0; settings put secure lock_screen_allow_private_notifications 0; settings put global show_notification_channel_warnings 0; settings put global zen_mode 3; settings put global policy_dnd 3" && su -c "settings put secure android_id b419fa14320149db" && su -c "cd /sdcard/Download && export PATH=$PATH:/data/data/com.termux/files/usr/bin && export TERM=xterm-256color && python ./S11.py"
+su -c "am kill-all" && su -c "settings put global heads_up_notifications_enabled 0; settings put secure lock_screen_show_notifications 0; settings put secure lock_screen_allow_private_notifications 0; settings put global show_notification_channel_warnings 0; settings put global zen_mode 3; settings put global policy_dnd 3" && su -c "settings put secure android_id 36ea1127de363534" && su -c "cd /sdcard/Download && export PATH=$PATH:/data/data/com.termux/files/usr/bin && export TERM=xterm-256color && lua ./Reconnect.lua"
