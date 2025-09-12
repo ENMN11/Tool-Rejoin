@@ -95,14 +95,14 @@ par_run(clear_package, [(pkg,) for pkg in roblox_clients], max_workers=11)
 par_run(uninstall_package, [(pkg,) for pkg in roblox_clients], max_workers=11)
 par_run(clear_package, [(pkg,) for pkg in roblox_clients], max_workers=11)
 print(SUCCESS + "🍲 Cleared And Uninstalled! 🍛")
-print(TITLE + "🎯 Installing 5 Tabs... 🍵")
-files = [f"{i}.apk" for i in range(1, 6)]
+print(TITLE + "🎯 Installing 6 Tabs... 🍵")
+files = [f"{i}.apk" for i in range(1, 7)]
 paths = [os.path.join(DEST_DIR, fn) for fn in files]
-with ThreadPoolExecutor(max_workers=5) as ex:
+with ThreadPoolExecutor(max_workers=3) as ex:
     [f.result() for f in as_completed(
         [ex.submit(download, f"{BASE_URL}/LiteN/{fn}", p) for fn, p in zip(files, paths)]
     )]
 print(SUCCESS + "🥬 All Global Tabs Downloaded! ☕")
-with ThreadPoolExecutor(max_workers=5) as ex:
+with ThreadPoolExecutor(max_workers=3) as ex:
     [f.result() for f in as_completed([ex.submit(install, p) for p in paths])]
 print(SUCCESS + "🥩 All Global Tabs Installed! ☕")
