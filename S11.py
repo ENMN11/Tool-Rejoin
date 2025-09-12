@@ -191,15 +191,15 @@ mt_path = os.path.join(DEST_DIR, "MTManager.apk")
 download(f"{BASE_URL}/MTManager.apk", mt_path)
 install(mt_path)
 
-print(TITLE + "🎯 Installing 5 Global Tabs...")
-files = [f"{i}.apk" for i in range(1, 6)]
+print(TITLE + "🎯 Installing 6 Global Tabs...")
+files = [f"{i}.apk" for i in range(1, 7)]
 paths = [os.path.join(DEST_DIR, f) for f in files]
 
-with ThreadPoolExecutor(max_workers=4) as ex:
+with ThreadPoolExecutor(max_workers=3) as ex:
     [f.result() for f in as_completed([ex.submit(download, f"{BASE_URL}/LiteN/{fn}", p) for fn, p in zip(files, paths)])]
     print(SUCCESS + "🎯 All Global Tabs Downloaded!")
 
-with ThreadPoolExecutor(max_workers=4) as ex:
+with ThreadPoolExecutor(max_workers=3) as ex:
     [f.result() for f in as_completed([ex.submit(install, p) for p in paths])]
     print(SUCCESS + "🎯 All Global Tabs Installed!")
 
