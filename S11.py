@@ -5,6 +5,7 @@ import shutil
 import subprocess
 import requests
 import zipfile
+import urllib.parse
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from colorama import Fore, Style, init
