@@ -214,12 +214,8 @@ par_run(clear_package, [(p,) for p in lite_packages], 30)
 par_run(clear_package, [(p,) for p in lite_packages], 30)
 print(SUCCESS + "🧽 Device Cleaned Successfully! 🥑")
 
-mt_path = os.path.join(DEST_DIR, "MTManager.apk")
-download(f"{BASE_URL}/MTManager.apk", mt_path)
-install(mt_path)
-
-print(TITLE + "🎯 Installing 6 Global Tabs...")
-files = [f"{i}.apk" for i in range(1, 7)]
+print(TITLE + "🎯 Installing 9 Global Tabs...")
+files = [f"{i}.apk" for i in range(1, 10)]
 paths = [os.path.join(DEST_DIR, f) for f in files]
 
 with ThreadPoolExecutor(max_workers=3) as ex:
