@@ -147,20 +147,19 @@ def install(p, retries=6):
             else:
                 print(ERROR + f"❌ Install Failed After {retries} Attempts: {p}")
                 sys.exit(1)
-
 mini_path = os.path.join(DEST_DIR, "Mini.apk")
-via_path = os.path.join(DEST_DIR, "Via.apk")
+mtmanager_path = os.path.join(DEST_DIR, "MTManager.apk")
 
 with ThreadPoolExecutor(max_workers=2) as ex:
     [f.result() for f in as_completed([
         ex.submit(download, f"{BASE_URL}/Mini.apk", mini_path),
-        ex.submit(download, f"{BASE_URL}/Via.apk", via_path)
+        ex.submit(download, f"{BASE_URL}/MTManager.apk", mtmanager_path)
     ])]
 
 with ThreadPoolExecutor(max_workers=2) as ex:
     [f.result() for f in as_completed([
         ex.submit(install, mini_path),
-        ex.submit(install, via_path)
+        ex.submit(install, mtmanager_path)
     ])]
 
 def extract_and_move(zip_path, dest_folder, final_destination):
@@ -214,15 +213,15 @@ par_run(clear_package, [(p,) for p in lite_packages], 30)
 par_run(clear_package, [(p,) for p in lite_packages], 30)
 print(SUCCESS + "🧽 Device Cleaned Successfully! 🥑")
 
-print(TITLE + "🎯 Installing 9 Global Tabs...")
-files = [f"{i}.apk" for i in range(1, 10)]
+print(TITLE + "🎯 Installing 8 Global Tabs...")
+files = [f"{i}.apk" for i in range(1, 9)]
 paths = [os.path.join(DEST_DIR, f) for f in files]
 
-with ThreadPoolExecutor(max_workers=3) as ex:
+with ThreadPoolExecutor(max_workers=2) as ex:
     [f.result() for f in as_completed([ex.submit(download, f"{BASE_URL}/LiteN/{fn}", p) for fn, p in zip(files, paths)])]
     print(SUCCESS + "🎯 All Global Tabs Downloaded!")
 
-with ThreadPoolExecutor(max_workers=3) as ex:
+with ThreadPoolExecutor(max_workers=8) as ex:
     [f.result() for f in as_completed([ex.submit(install, p) for p in paths])]
     print(SUCCESS + "🎯 All Global Tabs Installed!")
 
