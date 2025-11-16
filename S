@@ -9,13 +9,12 @@ yes | pkg update
 yes | pkg upgrade
 yes | pkg i python
 yes | pkg i python-pip 
-pip install requests prettytable pycryptodome colorama tqdm asyncio websockets
+pip install prettytable requests rich colorama
 export CFLAGS="-Wno-error=implicit-function-declaration"
 pip install psutil
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/S11.py" -o /sdcard/Download/S11.py
-curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/Rejoin.py" -o /sdcard/Download/Rejoin.py
+curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/shouko.py" -o /sdcard/Download/shouko.py
 curl -Ls "https://raw.githubusercontent.com/ENMN11/Tool-Rejoin/refs/heads/main/Update.py" -o /sdcard/Download/Update.py
-curl -Ls "https://raw.githubusercontent.com/ENMN11/NexusHideout/refs/heads/main/config-change.json" -o /sdcard/Download/config-change.json
 if ! command -v su >/dev/null 2>&1 || ! su -c 'exit' >/dev/null 2>&1; then
     exit
 fi
